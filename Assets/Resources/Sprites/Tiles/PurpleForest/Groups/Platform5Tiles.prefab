@@ -84,7 +84,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4326441737304336}
   - component: {fileID: 61760454980427156}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Platform5Tiles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
