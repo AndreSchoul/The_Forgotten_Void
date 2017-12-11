@@ -3,36 +3,41 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class StoneController : MonoBehaviour {
-    private bool isGrounded = true;
-    private Rigidbody2D rb2d;
-    private float minX, maxX;
-    public GameObject detectorLeft;
-    public GameObject detectorRight;
-    
+    private Vector3 spawnPosition;
+    private float toleranzY;
+    public GameObject particle;
+    private AudioSource dieSound;
+    public bool firstObject;
 	// Use this for initialization
-	void Start () {
-        rb2d = GetComponent<Rigidbody2D>();        
+
+
+    private void Start()
+    {
+        spawnPosition = transform.position;
+        toleranzY = spawnPosition.y - 5;
+        dieSound = GetComponent<AudioSource>();
+        if (firstObject == false)
+        {
+            dieSound.Play();
+        }
+        
+    }
+
+    // Update is called once per frame
+    void Update () {        
+        if (transform.position.y < toleranzY)
+        {
+            
+            GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+            firstObject = false;
+            Instantiate(gameObject, spawnPosition, Quaternion.identity);          
+            Destroy(gameObject);            
+        }
 	}
 
-    void Update()
+    private void OnDestroy()
     {
-        BodenDetector leftGrounded = detectorLeft.GetComponent<BodenDetector>();
-        BodenDetector rightGrounded = detectorLeft.GetComponent<BodenDetector>();
-
-        if (!leftGrounded.isGrounded == false)
-        {            
-            Debug.Log("KeinLinks");
-            minX = detectorLeft.transform.position.x;
-            rb2d.velocity = new Vector3(0, 0);
-            transform.position = new Vector3(minX, transform.position.y, transform.position.z);
-        }
-        if (!rightGrounded == false)
-        {
-            Debug.Log("KeinRechts");
-            maxX = detectorRight.transform.position.x;
-            rb2d.velocity = new Vector3(0, 0);
-            transform.position = new Vector3(minX, transform.position.y, transform.position.z);
-        }
+        
+        Destroy(Instantiate(particle, transform.position, Quaternion.identity), 2);       
     }
-    // Update is called once per frame
 }
