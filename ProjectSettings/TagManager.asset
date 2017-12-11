@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Hero
+  - Enemy
+  - Selector
+  - DeadHero
+  - DeadEnemy
+  - Exit
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Ground
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 348212389
+    locked: 0
+  - name: Midground
+    uniqueID: 928923617
+    locked: 0
+  - name: Foreground
+    uniqueID: 3634506525
+    locked: 0
+  - name: BattleBackground
+    uniqueID: 2991450529
+    locked: 0
+  - name: Interactable
+    uniqueID: 719874441
+    locked: 0
+  - name: test
+    uniqueID: 2484034237
+    locked: 0
+  - name: Blende
+    uniqueID: 470322637
+    locked: 0

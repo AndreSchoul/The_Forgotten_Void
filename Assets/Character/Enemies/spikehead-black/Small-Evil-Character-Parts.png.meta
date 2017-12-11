@@ -1,0 +1,295 @@
+fileFormatVersion: 2
+guid: 23b9dd3839d40c146852f1099b38367d
+timeCreated: 1511129628
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: l_hand
+    21300002: l_arm_lower
+    21300004: l_arm_upper
+    21300006: c_torso
+    21300008: c_head
+    21300010: r_hand
+    21300012: r_arm_lower
+    21300014: r_arm_upper
+    21300016: l_leg_upper
+    21300018: r_leg_upper
+    21300020: l_leg_lower
+    21300022: r_leg_lower
+    21300024: l_foot
+    21300026: r_foot
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: l_hand
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 2521
+        width: 394
+        height: 374
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: l_arm_lower
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 2541
+        width: 403
+        height: 328
+      alignment: 9
+      pivot: {x: 0.8832638, y: 0.1519433}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: l_arm_upper
+      rect:
+        serializedVersion: 2
+        x: 1365
+        y: 2663
+        width: 405
+        height: 323
+      alignment: 9
+      pivot: {x: 0.88137144, y: 0.8950263}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: c_torso
+      rect:
+        serializedVersion: 2
+        x: 2133
+        y: 2075
+        width: 116
+        height: 950
+      alignment: 9
+      pivot: {x: 0.5, y: 0.08293509}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: c_head
+      rect:
+        serializedVersion: 2
+        x: 2681
+        y: 2358
+        width: 992
+        height: 1041
+      alignment: 9
+      pivot: {x: 0.5, y: 0.067785725}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: r_hand
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 1664
+        width: 385
+        height: 385
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: r_arm_lower
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 1887
+        width: 449
+        height: 148
+      alignment: 9
+      pivot: {x: 0.9337373, y: 0.36387593}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: r_arm_upper
+      rect:
+        serializedVersion: 2
+        x: 1407
+        y: 1897
+        width: 261
+        height: 432
+      alignment: 9
+      pivot: {x: 0.7572971, y: 0.8730802}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: l_leg_upper
+      rect:
+        serializedVersion: 2
+        x: 1450
+        y: 1145
+        width: 394
+        height: 341
+      alignment: 9
+      pivot: {x: 0.840886, y: 0.8544811}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: r_leg_upper
+      rect:
+        serializedVersion: 2
+        x: 2492
+        y: 1033
+        width: 123
+        height: 446
+      alignment: 9
+      pivot: {x: 0.6091944, y: 0.9215975}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: l_leg_lower
+      rect:
+        serializedVersion: 2
+        x: 1407
+        y: 448
+        width: 243
+        height: 436
+      alignment: 9
+      pivot: {x: 0.22364387, y: 0.8850595}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: r_leg_lower
+      rect:
+        serializedVersion: 2
+        x: 2425
+        y: 488
+        width: 422
+        height: 311
+      alignment: 9
+      pivot: {x: 0.08625222, y: 0.8454888}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: l_foot
+      rect:
+        serializedVersion: 2
+        x: 1287
+        y: 263
+        width: 247
+        height: 98
+      alignment: 9
+      pivot: {x: 0.7990688, y: 0.56852347}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: r_foot
+      rect:
+        serializedVersion: 2
+        x: 2425
+        y: 174
+        width: 252
+        height: 100
+      alignment: 9
+      pivot: {x: 0.8464326, y: 0.50000185}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
