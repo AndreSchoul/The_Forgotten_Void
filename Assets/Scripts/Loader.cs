@@ -11,4 +11,5 @@ public class Loader : MonoBehaviour {
             Instantiate(gameManager);
         }
 	}
+
 }
