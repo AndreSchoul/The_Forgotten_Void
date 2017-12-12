@@ -27,12 +27,12 @@ public class BlendenController : MonoBehaviour {
 
     // nur zum erstmal üben wieder verlassen und so
     private void Update()
-    {
+    {/*
         if (Input.GetButtonDown("Fire1"))
         {
             blenden();
             JNRCharacterController.isInFight = false;
-        }
+        }*/
     }
 
     void FixedUpdate()
@@ -54,7 +54,8 @@ public class BlendenController : MonoBehaviour {
                 {
                     if (JNRCharacterController.isInFight)
                     {
-                        cam.transform.position = new Vector3(-100, -100, 10);                       
+                        //cam.transform.position = new Vector3(-200, 0, 10);
+                        cam.transform.position = new Vector3(-200, 0, -25);
                         cam.transform.Rotate(0, 0, cam.transform.eulerAngles.z * -1f);                       
                     }
                     else

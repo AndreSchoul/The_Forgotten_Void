@@ -5,81 +5,126 @@ using UnityEngine;
 
 public class JNRCharacterController : MonoBehaviour {
 
-    public Animator animator;
-    public float speed     =  10f;
-    public float jumpForce = 800f;
     public List<Transform> spawnPointsHeros   = new List<Transform>();
     public List<Transform> frontPointsHeros   = new List<Transform>();
     public List<Transform> spawnPointsEnemies = new List<Transform>();
     public List<Transform> frontPointsEnemies = new List<Transform>();
-    public static bool isInFight = false;
-    public bool isJump           = false;
-    public bool isLookingRight   = true;
-    public bool isAction         = true;
+    public float fallMultiplier    = 15f;
+    public float lowJumpMultiplier =  2f;
+    public float movementSpeed;
+    public float minMovementSpeed  = 20f;
+    public float maxMovementSpeed  = 30f;
+    public float jumpVelocity      = 20f;
     public static GameObject hero;
     public static AudioSource audio_JnR;
-    public Transform groundCheck;
-    public LayerMask whatIsGrounded;
+    public static bool isInFight = false;
 
+    private float walkTime = 0f;
+    private Animator animator;
     private bool isGrounded = true;
+    private Transform groundDetector;
+    private LayerMask whatIsGrounded;
     private Rigidbody2D rb2d;
+    private AnimationStance animationStance;
+    private enum AnimationStance {
+        idle,
+        walk,
+        jump,
+        land,
+        attack
+    }
 
-    // Use this for initialization
-    void Start() {
-        /*if(GameManager.instance.nextSpawnPoint != "") {
-            GameObject spawnPoint = GameObject.Find(GameManager.instance.nextSpawnPoint);
-            transform.position = spawnPoint.transform.position;
-            GameManager.instance.nextSpawnPoint = "";
-        } else if(GameManager.instance.lastHeroPosition != Vector3.zero) {
-            transform.position = GameManager.instance.lastHeroPosition;
-            GameManager.instance.lastHeroPosition = Vector3.zero;
-        }*/
+    private void Awake() {
         rb2d = GetComponent<Rigidbody2D>();
+        animator = GetComponentInChildren<Animator>();
+        groundDetector = this.gameObject.transform.Find("GroundDetector");
+        whatIsGrounded |= (1 << LayerMask.NameToLayer("Ground"));
+        movementSpeed = minMovementSpeed;
         hero = this.gameObject;
-        if (!isInFight) {
-            transform.position = GameManager.instance.nextHeroPosition;
-        }
         audio_JnR = this.GetComponent<AudioSource>();
         audio_JnR.Play();
     }
 
-    // Update is called once per frame
-    void Update () {
+    private void FixedUpdate() {
+        PlayAnimation();
+        Movement();
+    }
+
+    private void Update() {
+        Jump();
+    }
+
+    private void Jump() {
         if (!isInFight) {
-            if (Input.GetAxis("Horizontal") != 0) {
-                animator.SetBool("isWalking", true);
-                animator.SetBool("isIdling", false);
-                transform.Translate(Vector3.right * Time.deltaTime * speed);
-                if (Input.GetAxis("Horizontal") < 0) {
-                    transform.rotation = Quaternion.Euler(0, 180, 0);
-                }
-                if (Input.GetAxis("Horizontal") > 0) {
-                    transform.rotation = Quaternion.Euler(0, 0, 0);
-                }
+            isGrounded = Physics2D.OverlapCircle(groundDetector.position, 1F, whatIsGrounded);
+            if (isGrounded && Input.GetButtonDown("Jump")) {
+                rb2d.velocity = Vector2.up * jumpVelocity;
+                animationStance = AnimationStance.jump;
+            }
+            if (rb2d.velocity.y > 0 && !Input.GetButton("Jump")) {
+                rb2d.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
+                animationStance = AnimationStance.jump;
+            }
+            if (rb2d.velocity.y < 0) {
+                rb2d.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
+                animationStance = AnimationStance.land;
+            }
+        }
+    }
+
+    private void Movement() {
+        if (!isInFight) {
+            movementSpeed = Mathf.Clamp(movementSpeed, minMovementSpeed, maxMovementSpeed);
+            if (Input.GetAxis("Horizontal") == 0) {
+                walkTime = 0f;
+                movementSpeed = minMovementSpeed;
+                animationStance = AnimationStance.idle;
             } else {
+                transform.Translate(Vector3.right * Time.deltaTime * movementSpeed);
+                walkTime += Time.deltaTime;
+                if (walkTime > 1f) movementSpeed += 0.08f;
+                else movementSpeed = minMovementSpeed;
+                animationStance = AnimationStance.walk;
+                FlipSpriteRotation();
+            }
+        }
+    }
+
+    private void HandleLayers() {
+        if (!isGrounded) animator.SetLayerWeight(1, 1);
+        else animator.SetLayerWeight(1, 0);
+    }
+
+    public void PlayAnimation() {
+        HandleLayers();
+        switch (animationStance) {
+            case (AnimationStance.idle):
                 animator.SetBool("isWalking", false);
                 animator.SetBool("isIdling", true);
-            }
-            if (Input.GetButtonDown("Jump") && isGrounded) {
-                isJump = true;
-            }
-            if (Input.GetButtonDown("Fire1")) {
-                isAction = true;
-            } else {
-                isAction = false;
-            }
+                animator.SetBool("isJumping", false);
+                break;
+            case (AnimationStance.walk):
+                animator.SetBool("isWalking", true);
+                animator.SetBool("isIdling", false);
+                animator.SetBool("isJumping", false);
+                break;
+            case (AnimationStance.jump):
+                animator.SetBool("isWalking", false);
+                animator.SetBool("isIdling", false);
+                animator.SetTrigger("isJumping");
+                break;
+            case (AnimationStance.land):
+                animator.SetBool("isWalking", false);
+                animator.SetBool("isIdling", false);
+                animator.SetBool("isLanding", true);
+                break;
         }
-	}
+        if (isGrounded) animator.SetBool("isLanding", false);
+    }
 
-    void FixedUpdate() {
-        // TODO: Animation
-        float h = Input.GetAxisRaw("Horizontal");
-        rb2d.velocity = new Vector2(h * speed, rb2d.velocity.y);
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, 1F, whatIsGrounded);
-        if (isJump) {
-            rb2d.AddForce(new Vector2(0, jumpForce));
-            isJump = false;
-        }
+    public void FlipSpriteRotation() {
+        if (Input.GetAxis("Horizontal") < 0) transform.rotation = Quaternion.Euler(0, 180, 0);
+        if (Input.GetAxis("Horizontal") > 0) transform.rotation = Quaternion.Euler(0, 0, 0);
     }
 
     /// <summary>

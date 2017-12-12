@@ -5,11 +5,11 @@ using UnityEngine;
 public class UnitSelection : MonoBehaviour
 {
     public static bool setEnemySelection = false;
-    public static bool setHeroSelection = false;
+    //public static bool setHeroSelection = false;
     public static GameObject detectedEnemy;
-    public static GameObject detectedHero;
+    //public static GameObject detectedHero;
     public static GameObject enemySelector;
-    public static GameObject heroSelector;
+    //public static GameObject heroSelector;
 
     void OnMouseEnter() {
         //DetectTarget();
@@ -52,33 +52,7 @@ public class UnitSelection : MonoBehaviour
                             setEnemySelection = true;
                         }
                     }
-                }/*
-                if (hit.collider.gameObject.tag == "Hero") {
-                    if (detectedHero == null) {
-                        detectedHero = hit.collider.gameObject;
-                        heroSelector = detectedHero.transform.Find("Selector").gameObject;
-                        heroSelector.SetActive(true);
-                        setHeroSelection = true;
-                    } else {
-                        if (detectedHero == hit.collider.gameObject) {
-                            heroSelector = detectedHero.transform.Find("Selector").gameObject;
-                            if (!setHeroSelection) {
-                                heroSelector.SetActive(true);
-                                setHeroSelection = true;
-                            } else {
-                                heroSelector.SetActive(false);
-                                setHeroSelection = false;
-                            }
-                        } else {
-                            heroSelector = detectedHero.transform.Find("Selector").gameObject;
-                            heroSelector.SetActive(false);
-                            detectedHero = hit.collider.gameObject;
-                            heroSelector = detectedHero.transform.Find("Selector").gameObject;
-                            heroSelector.SetActive(true);
-                            setHeroSelection = true;
-                        }
-                    }
-                }*/
+                }
             }
         }
     }
