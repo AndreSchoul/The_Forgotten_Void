@@ -22,13 +22,10 @@ public class GameManager : MonoBehaviour {
 
 	void Awake () {
         // check if an instance exists
-		if(instance == null) { 
-            instance = this;
-        }
+		if(instance == null) instance = this;
         // if another instance exists 
-        else if (instance != this) {
-            Destroy(gameObject);
-        }
+        else if (instance != this) Destroy(gameObject);
+
         // persistent through different scenes
      /*   DontDestroyOnLoad(gameObject);
         if(!GameObject.Find("HeroCharacter")) {

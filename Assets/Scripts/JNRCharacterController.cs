@@ -36,6 +36,7 @@ public class JNRCharacterController : MonoBehaviour {
 
     private void Awake() {
         rb2d = GetComponent<Rigidbody2D>();
+        rb2d.freezeRotation = true;
         animator = GetComponentInChildren<Animator>();
         groundDetector = this.gameObject.transform.Find("GroundDetector");
         whatIsGrounded |= (1 << LayerMask.NameToLayer("Ground"));

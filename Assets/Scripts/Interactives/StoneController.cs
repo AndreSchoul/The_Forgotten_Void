@@ -34,7 +34,7 @@ public class StoneController : MonoBehaviour {
             Destroy(gameObject);            
         }
 	}
-
+    
     private void OnDestroy()
     {
         

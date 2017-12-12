@@ -32,7 +32,7 @@ public class CharacterStateMaschine : MonoBehaviour {
     private BattleStateMachine bsm;
     private UnitStats_Health stats;
     private Transform healthPanelTransform;
-    private float animationSpeed = 25f;
+    private float animationSpeed = 75f;
     private bool alive = true;
     private bool doOnce = false;
     private bool actionStarted = false; 
