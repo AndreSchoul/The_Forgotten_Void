@@ -2,25 +2,18 @@
 
 using UnityEngine;
 
-public class UnitSelection : MonoBehaviour
-{
+public class UnitSelection : MonoBehaviour {
+
     public static bool setEnemySelection = false;
-    //public static bool setHeroSelection = false;
     public static GameObject detectedEnemy;
-    //public static GameObject detectedHero;
     public static GameObject enemySelector;
-    //public static GameObject heroSelector;
 
     void OnMouseEnter() {
-        //DetectTarget();
+        DetectTarget();
     }
 
     void OnMouseDown() {
         DetectTarget();
-    }
-
-    void OnMouseExit() {
-        //DetectTarget(false);
     }
 
     public static void DetectTarget() {

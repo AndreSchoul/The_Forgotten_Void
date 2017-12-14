@@ -1,38 +1,39 @@
 ﻿// Author: André Schoul
 
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class JNRCharacterController : MonoBehaviour {
 
-    public List<Transform> spawnPointsHeros   = new List<Transform>();
-    public List<Transform> frontPointsHeros   = new List<Transform>();
-    public List<Transform> spawnPointsEnemies = new List<Transform>();
-    public List<Transform> frontPointsEnemies = new List<Transform>();
-    public float fallMultiplier    = 15f;
-    public float lowJumpMultiplier =  2f;
-    public float movementSpeed;
-    public float minMovementSpeed  = 20f;
-    public float maxMovementSpeed  = 30f;
-    public float jumpVelocity      = 20f;
-    public static GameObject hero;
-    public static AudioSource audio_JnR;
-    public static bool isInFight = false;
-
-    private float walkTime = 0f;
-    private Animator animator;
-    private bool isGrounded = true;
-    private Transform groundDetector;
-    private LayerMask whatIsGrounded;
-    private Rigidbody2D rb2d;
-    private AnimationStance animationStance;
-    private enum AnimationStance {
+    public enum AnimationStance {
         idle,
         walk,
         jump,
         land,
         attack
     }
+    [HideInInspector]
+    public AnimationStance animationStance;
+    [HideInInspector]
+    public bool isGrounded = true;
+    public List<Transform> spawnPointsHeros   = new List<Transform>();
+    public List<Transform> spawnPointsEnemies = new List<Transform>();
+    public float fallMultiplier    = 15f;
+    public float lowJumpMultiplier =  2f;
+    public float minMovementSpeed  = 20f;
+    public float maxMovementSpeed  = 30f;
+    public float jumpVelocity      = 20f;
+    public float movementSpeed;
+    public static GameObject hero;
+    public static AudioSource audio_JnR;
+    public static bool isInFight = false;
+
+    private float walkTime = 0f;
+    private Animator animator;
+    private Transform groundDetector;
+    private LayerMask whatIsGrounded;
+    private Rigidbody2D rb2d;
 
     private void Awake() {
         rb2d = GetComponent<Rigidbody2D>();
@@ -46,12 +47,8 @@ public class JNRCharacterController : MonoBehaviour {
         audio_JnR.Play();
     }
 
-    private void FixedUpdate() {
-        PlayAnimation();
+    private void FixedUpdate() { 
         Movement();
-    }
-
-    private void Update() {
         Jump();
     }
 
@@ -83,7 +80,7 @@ public class JNRCharacterController : MonoBehaviour {
             } else {
                 transform.Translate(Vector3.right * Time.deltaTime * movementSpeed);
                 walkTime += Time.deltaTime;
-                if (walkTime > 1f) movementSpeed += 0.08f;
+                if (walkTime > 1f) movementSpeed += 0.085f;
                 else movementSpeed = minMovementSpeed;
                 animationStance = AnimationStance.walk;
                 FlipSpriteRotation();
@@ -91,55 +88,23 @@ public class JNRCharacterController : MonoBehaviour {
         }
     }
 
-    private void HandleLayers() {
-        if (!isGrounded) animator.SetLayerWeight(1, 1);
-        else animator.SetLayerWeight(1, 0);
-    }
-
-    public void PlayAnimation() {
-        HandleLayers();
-        switch (animationStance) {
-            case (AnimationStance.idle):
-                animator.SetBool("isWalking", false);
-                animator.SetBool("isIdling", true);
-                animator.SetBool("isJumping", false);
-                break;
-            case (AnimationStance.walk):
-                animator.SetBool("isWalking", true);
-                animator.SetBool("isIdling", false);
-                animator.SetBool("isJumping", false);
-                break;
-            case (AnimationStance.jump):
-                animator.SetBool("isWalking", false);
-                animator.SetBool("isIdling", false);
-                animator.SetTrigger("isJumping");
-                break;
-            case (AnimationStance.land):
-                animator.SetBool("isWalking", false);
-                animator.SetBool("isIdling", false);
-                animator.SetBool("isLanding", true);
-                break;
-        }
-        if (isGrounded) animator.SetBool("isLanding", false);
-    }
-
     public void FlipSpriteRotation() {
         if (Input.GetAxis("Horizontal") < 0) transform.rotation = Quaternion.Euler(0, 180, 0);
         if (Input.GetAxis("Horizontal") > 0) transform.rotation = Quaternion.Euler(0, 0, 0);
     }
 
+    
     /// <summary>
     /// Checks collider to know what the hero is interacting with and acts accordingly.
     /// </summary>
     /// <param name = "other">Collided object</param> 
     void OnTriggerEnter2D(Collider2D other) {
         if (!isInFight) {
-            CollisionHandler col = other.gameObject.GetComponent<CollisionHandler>();
-            // for map transition
-            if (other.tag == "Teleporter") {
+            // for map transition   
+            /*if (other.tag == "Teleporter") {
                 GameManager.instance.nextSpawnPoint = col.spawnPointName;
                 GameManager.instance.sceneToLoad = col.sceneToLoad;
-            }
+            }*/
             // for interaction with items
             if(other.tag == "Item") {
 
