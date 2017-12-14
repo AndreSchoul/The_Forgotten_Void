@@ -10,6 +10,9 @@ TagManager:
   - DeadHero
   - DeadEnemy
   - Exit
+  - Interactable
+  - SpawnPointHero
+  - SpawnPointEnemy
   layers:
   - Default
   - TransparentFX

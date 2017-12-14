@@ -134,7 +134,6 @@ GameObject:
   - component: {fileID: 70182970904921140}
   - component: {fileID: 50322995028113744}
   - component: {fileID: 82406686856556056}
-  - component: {fileID: 114336708419844928}
   - component: {fileID: 114168238988791182}
   m_Layer: 0
   m_Name: JnR_Enemy
@@ -606,19 +605,6 @@ MonoBehaviour:
   characters:
   - Characters/Enemies/EnemyCharacter
   - Characters/Enemies/EnemyCharacter
---- !u!114 &114336708419844928
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1449680747875930}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5bb657a28499b943aea9afde39ca0f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneToLoad: TurnBasedFight
-  spawnPointName: 
 --- !u!212 &212018374991515836
 SpriteRenderer:
   m_ObjectHideFlags: 1
