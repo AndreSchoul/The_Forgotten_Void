@@ -16,7 +16,7 @@ public class HandleAnimations : MonoBehaviour {
     void Update() {
         PlayAnimation();
     }
-
+    
     private void HandleLayers() {
         if (!characterController.isGrounded) animator.SetLayerWeight(1, 1);
         else animator.SetLayerWeight(1, 0);

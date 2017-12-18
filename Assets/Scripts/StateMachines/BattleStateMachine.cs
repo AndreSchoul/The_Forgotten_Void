@@ -225,8 +225,9 @@ public class BattleStateMachine : MonoBehaviour {
             actionBtn.attackToPerform = action;
             actionButton_.transform.SetParent(actionSpacer, false);
             actionButtons.Add(actionButton_);
-            if(action.name == "Attack_Standard") actionButton_.GetComponent<Button>().image.sprite = Resources.Load<Sprite>("GUI/attack-icon");
-            if (action.name == "Attack_TripleHit") actionButton_.GetComponent<Button>().image.sprite = Resources.Load<Sprite>("GUI/super-attack-icon");
+            if (action.name == "Attack_Standard")  actionButton_.GetComponent<Button>().image.sprite = Resources.Load<Sprite>("GUI/normal-attack-icon");
+            if (action.name == "Attack_TripleHit") actionButton_.GetComponent<Button>().image.sprite = Resources.Load<Sprite>("GUI/double-attack-icon");
+            if (action.name == "Blaster") actionButton_.GetComponent<Button>().image.sprite = Resources.Load<Sprite>("GUI/weapon-attack-icon");
             actionButton_.GetComponent<Button>().onClick.AddListener(() => ActionToPerform(action));
         }
     }

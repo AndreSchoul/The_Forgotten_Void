@@ -47,7 +47,7 @@ public class JNRCharacterController : MonoBehaviour {
         audio_JnR.Play();
     }
 
-    private void Update() { 
+    private void FixedUpdate() { 
         Movement();
         Jump();
     }
