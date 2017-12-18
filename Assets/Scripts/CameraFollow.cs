@@ -17,7 +17,7 @@ public class CameraFollow : MonoBehaviour {
 
     // Update is called once per frame
     void FixedUpdate() {
-        if (target) {
+        if (target && !JNRCharacterController.isInFight) {
             Vector3 posNoZ = transform.position;
             posNoZ.z = target.transform.position.z;
             Vector3 targetDirection = (target.transform.position - posNoZ);

@@ -47,7 +47,7 @@ public class JNRCharacterController : MonoBehaviour {
         audio_JnR.Play();
     }
 
-    private void FixedUpdate() { 
+    private void Update() { 
         Movement();
         Jump();
     }
@@ -111,6 +111,7 @@ public class JNRCharacterController : MonoBehaviour {
             }
             // for battle
             if (other.tag == "Enemy") {
+                //isInFight = true;
                 GameObject.Find("Blende").GetComponent<BlendenController>().blenden();
                 isInFight = true;
                 GameManager.instance.gui.SetActive(true);

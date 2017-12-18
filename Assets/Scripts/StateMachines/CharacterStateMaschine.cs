@@ -65,7 +65,7 @@ public class CharacterStateMaschine : MonoBehaviour {
             bsm = GameObject.Find("BattleManager").GetComponent<BattleStateMachine>();
 
             if(this.gameObject.tag == "Hero") CreateHeroPanel();
-        } 
+        }
     }
 
     // Update is called once per frame
@@ -225,9 +225,17 @@ public class CharacterStateMaschine : MonoBehaviour {
         stats = healthPanel.GetComponent<UnitStats_Health>();
         stats.healthBar.value = baseClass.currentHP / baseClass.baseHP;
         stats.attackPoints = baseClass.currentMP;
-        Vector2 screenPosition = Camera.main.WorldToScreenPoint(new Vector3(transform.position.x, transform.position.y - 1.25f, transform.position.z));
+        Vector3 screenPosition = Camera.main.WorldToScreenPoint(new Vector3(transform.position.x, transform.position.y - 1.25f, transform.position.z));
         healthPanel.transform.SetParent(GameObject.Find("BattleUI").transform, false);
         healthPanel.transform.position = screenPosition;
+        //healthPanel.transform.position = new Vector2(transform.position.x, transform.position.y);
+
+
+
+  
+        //healthPanel.transform.position = new Vector2(screenPosition.x - 518, screenPosition.y - 160);
+
+        Debug.Log(Camera.main.WorldToScreenPoint(new Vector3(0,0,0)));
     }
 
     /// <summary>
