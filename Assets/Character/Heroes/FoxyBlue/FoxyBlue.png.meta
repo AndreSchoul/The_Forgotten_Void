@@ -1,0 +1,220 @@
+fileFormatVersion: 2
+guid: 3fc4a36ce8391d94ba634504e7592875
+timeCreated: 1514646918
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: tail_FoxyBlue
+    21300002: head_FoxyBlue
+    21300004: torso_FoxyBlue
+    21300006: l_arm_upper_FoxyBlue
+    21300008: l_arm_lower_FoxyBlue
+    21300010: r_arm_upper_FoxyBlue
+    21300012: r_arm_lower_FoxyBlue
+    21300014: l_leg_FoxyBlue
+    21300016: r_leg_FoxyBlue
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: tail_FoxyBlue
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 529
+        width: 345
+        height: 311
+      alignment: 9
+      pivot: {x: 0.8761308, y: 0.082748756}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: head_FoxyBlue
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 826
+        width: 296
+        height: 240
+      alignment: 9
+      pivot: {x: 0.41906554, y: 0.017539978}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: torso_FoxyBlue
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 389
+        width: 192
+        height: 327
+      alignment: 9
+      pivot: {x: 0.42721525, y: 0.023797926}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: l_arm_upper_FoxyBlue
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 641
+        width: 71
+        height: 100
+      alignment: 9
+      pivot: {x: 0.16258304, y: 0.839386}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: l_arm_lower_FoxyBlue
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 598
+        width: 118
+        height: 75
+      alignment: 9
+      pivot: {x: 0.1277921, y: 0.7928035}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: r_arm_upper_FoxyBlue
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 472
+        width: 72
+        height: 100
+      alignment: 9
+      pivot: {x: 0.19499715, y: 0.839386}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: r_arm_lower_FoxyBlue
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 427
+        width: 117
+        height: 75
+      alignment: 9
+      pivot: {x: 0.11101878, y: 0.8194226}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: l_leg_FoxyBlue
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 107
+        width: 123
+        height: 213
+      alignment: 9
+      pivot: {x: 0.3701539, y: 0.88428104}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: r_leg_FoxyBlue
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 107
+        width: 124
+        height: 213
+      alignment: 9
+      pivot: {x: 0.37120056, y: 0.8749083}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
