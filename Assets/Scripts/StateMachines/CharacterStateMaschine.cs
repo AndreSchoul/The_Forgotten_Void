@@ -225,7 +225,7 @@ public class CharacterStateMaschine : MonoBehaviour {
         stats = healthPanel.GetComponent<UnitStats_Health>();
         stats.healthBar.value = baseClass.currentHP / baseClass.baseHP;
         stats.attackPoints = baseClass.currentMP;
-        Vector2 screenPosition = Camera.main.WorldToScreenPoint(new Vector3(transform.position.x, transform.position.y - 1.25f, transform.position.z));
+        Vector3 screenPosition = Camera.main.WorldToScreenPoint(new Vector3(transform.position.x + 216.5f, transform.position.y + 1f, transform.position.z));
         healthPanel.transform.SetParent(GameObject.Find("BattleUI").transform, false);
         healthPanel.transform.position = screenPosition;
     }
