@@ -9,7 +9,7 @@ public class UnitSelection : MonoBehaviour {
     public static GameObject enemySelector;
 
     void OnMouseEnter() {
-        DetectTarget();
+        //DetectTarget();
     }
 
     void OnMouseDown() {
