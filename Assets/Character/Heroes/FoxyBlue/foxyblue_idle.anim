@@ -49,7 +49,7 @@ AnimationClip:
         tangentMode: 0
       - serializedVersion: 2
         time: 0.5
-        value: {x: 0, y: 0, z: -16.016}
+        value: {x: 0, y: 0, z: -14.630001}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -74,7 +74,7 @@ AnimationClip:
         tangentMode: 0
       - serializedVersion: 2
         time: 0.5
-        value: {x: 0, y: 0, z: -16.016}
+        value: {x: 0, y: 0, z: -13.869}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -99,7 +99,7 @@ AnimationClip:
         tangentMode: 0
       - serializedVersion: 2
         time: 0.5
-        value: {x: 0, y: 0, z: 3.6290002}
+        value: {x: 0, y: 0, z: -3.66}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -421,7 +421,7 @@ AnimationClip:
         tangentMode: 136
       - serializedVersion: 2
         time: 0.5
-        value: -16.016
+        value: -14.630001
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -505,7 +505,7 @@ AnimationClip:
         tangentMode: 136
       - serializedVersion: 2
         time: 0.5
-        value: -16.016
+        value: -13.869
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -841,7 +841,7 @@ AnimationClip:
         tangentMode: 136
       - serializedVersion: 2
         time: 0.5
-        value: 3.6290002
+        value: -3.66
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -866,6 +866,36 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
+    path: torso_FoxyBlue/tail_FoxyBlue
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: torso_FoxyBlue/tail_FoxyBlue
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: torso_FoxyBlue/tail_FoxyBlue
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
     path: torso_FoxyBlue/head_FoxyBlue
     classID: 4
     script: {fileID: 0}
@@ -925,7 +955,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.z
+    attribute: m_LocalEulerAngles.x
     path: torso_FoxyBlue/r_arm_upper_FoxyBlue
     classID: 4
     script: {fileID: 0}
@@ -945,38 +975,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.x
-    path: torso_FoxyBlue/r_arm_upper_FoxyBlue
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.x
-    path: torso_FoxyBlue/tail_FoxyBlue
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.y
-    path: torso_FoxyBlue/tail_FoxyBlue
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: torso_FoxyBlue/tail_FoxyBlue
+    path: torso_FoxyBlue/r_arm_upper_FoxyBlue
     classID: 4
     script: {fileID: 0}
   m_HasGenericRootTransform: 0
