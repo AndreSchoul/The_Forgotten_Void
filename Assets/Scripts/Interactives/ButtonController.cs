@@ -1,11 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class ButtonController : MonoBehaviour {
 
     private bool buttonHit = false;
     private bool stay = false;
+    //public GameObject fahrStuhl;
+
+    private static List<GameObject> allElevators = new List<GameObject>();
+
     public GameObject fahrStuhl;
 
     private void OnTriggerEnter2D(Collider2D collision)

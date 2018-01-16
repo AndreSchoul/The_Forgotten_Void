@@ -28,7 +28,8 @@ public class CharacterStateMaschine : MonoBehaviour {
 
     private Animator animator;
     private Vector3 startposition;
-    private JNRCharacterController characterWalk;
+    //private JNRCharacterController characterWalk;
+    private PlayerController characterWalk;
     private BattleStateMachine bsm;
     private UnitStats_Health stats;
     private Transform healthPanelTransform;
@@ -54,11 +55,13 @@ public class CharacterStateMaschine : MonoBehaviour {
         animator = this.gameObject.GetComponentInChildren<Animator>();
         selector.SetActive(false);
         if (this.gameObject.tag == "Hero") {
-            characterWalk = this.gameObject.GetComponent<JNRCharacterController>();
-          
+            //characterWalk = this.gameObject.GetComponent<JNRCharacterController>();
+            characterWalk = this.gameObject.GetComponent<PlayerController>();
+
             //this.gameObject.transform.localScale = new Vector3(-1f, 1f, 1f);
         }
-        if (JNRCharacterController.isInFight) {
+        //if (JNRCharacterController.isInFight) {
+        if (PlayerController.isInFight) {
             currentState = TurnState.wait;
             startposition = transform.position;
             CreateHealthPanel();
@@ -72,8 +75,8 @@ public class CharacterStateMaschine : MonoBehaviour {
     void Update() {
         switch (currentState) {
             case (TurnState.wait):
-                if (JNRCharacterController.isInFight) {
-
+                //if (JNRCharacterController.isInFight) {
+                if (PlayerController.isInFight) {
                     animator.SetFloat("x", 0);
                     animator.SetBool("isWalking", false);
                     animator.SetBool("isIdling", true);
@@ -225,7 +228,7 @@ public class CharacterStateMaschine : MonoBehaviour {
         stats = healthPanel.GetComponent<UnitStats_Health>();
         stats.healthBar.value = baseClass.currentHP / baseClass.baseHP;
         stats.attackPoints = baseClass.currentMP;
-        Vector3 screenPosition = Camera.main.WorldToScreenPoint(new Vector3(transform.position.x + 216.5f, transform.position.y + 1f, transform.position.z));
+        Vector3 screenPosition = Camera.main.WorldToScreenPoint(new Vector3(transform.position.x + 221.5f, transform.position.y + 14f, transform.position.z));
         healthPanel.transform.SetParent(GameObject.Find("BattleUI").transform, false);
         healthPanel.transform.position = screenPosition;
     }

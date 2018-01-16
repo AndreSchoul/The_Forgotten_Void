@@ -17,8 +17,9 @@ public class UnitSelection : MonoBehaviour {
     }
 
     public static void DetectTarget() {
-        if(JNRCharacterController.isInFight) { 
-        RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, GameObject.Find("Main Camera").transform.position.z * -1)), Vector2.zero);
+        //if(JNRCharacterController.isInFight) { 
+        if (PlayerController.isInFight) {
+            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, GameObject.Find("Main Camera").transform.position.z * -1)), Vector2.zero);
             if (hit.collider != null) {
                 if (hit.collider.gameObject.tag == "Enemy") {
                     if (detectedEnemy == null) {

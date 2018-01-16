@@ -13,6 +13,8 @@ TagManager:
   - Interactable
   - SpawnPointHero
   - SpawnPointEnemy
+  - Elevator
+  - Button
   layers:
   - Default
   - TransparentFX
@@ -70,4 +72,7 @@ TagManager:
     locked: 0
   - name: Blende
     uniqueID: 470322637
+    locked: 0
+  - name: Ground
+    uniqueID: 1776702647
     locked: 0

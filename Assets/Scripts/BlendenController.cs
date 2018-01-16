@@ -25,18 +25,7 @@ public class BlendenController : MonoBehaviour {
         jnrChar = GameObject.FindGameObjectWithTag("Hero");
     }
 
-    // nur zum erstmal üben wieder verlassen und so
-    private void Update()
-    {/*
-        if (Input.GetButtonDown("Fire1"))
-        {
-            blenden();
-            JNRCharacterController.isInFight = false;
-        }*/
-    }
-
-    void FixedUpdate()
-    {
+    void FixedUpdate() {;
         if (isBlenden)
         {
             // Aktuelle Farbe der Blende
@@ -52,8 +41,8 @@ public class BlendenController : MonoBehaviour {
                 // Wenn Schwarz Kamera auf Kampfposition bringen
                 if(blende.color.a >= 1)
                 {
-                    if (JNRCharacterController.isInFight)
-                    {
+                    //if (JNRCharacterController.isInFight)
+                    if (PlayerController.isInFight) {
                         //cam.transform.position = new Vector3(-200, 0, 10);
                         cam.transform.position = new Vector3(-200, 0, -25);
                         cam.transform.Rotate(0, 0, cam.transform.eulerAngles.z * -1f);                       
@@ -67,7 +56,7 @@ public class BlendenController : MonoBehaviour {
                 }
 
                 // Startet Rückblende auf Weiß
-                if (blende.color.a >= 1f*blacktimer)
+                if (blende.color.a >= 1f * blacktimer)
                 {
                     wirdDunkel = false;
                     wirdHell = true;
@@ -76,7 +65,7 @@ public class BlendenController : MonoBehaviour {
 
             // Auf Schicht blenden
             if(wirdHell)
-            {                
+            {
                 blende.color = new Color(current.r, current.g, current.b, current.a - blendenspeed);
                 if(cam.transform.position.z - zoomfaktor >= -20)
                 {

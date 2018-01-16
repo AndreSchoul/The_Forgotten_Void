@@ -39,6 +39,7 @@ public class BattleStateMachine : MonoBehaviour {
 
     public GameObject detectedTarget;
 
+
     // Use this for initialization
     void Start() {
         battleStates = PerformAction.wait;
@@ -49,8 +50,9 @@ public class BattleStateMachine : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if (JNRCharacterController.isInFight) {
-            switch (battleStates) {
+        //if (JNRCharacterController.isInFight) {
+        if (PlayerController.isInFight) {
+                switch (battleStates) {
                 case (PerformAction.wait):
                     if (performList.Count > 0) {
                         battleStates = PerformAction.takeAction;
@@ -275,7 +277,8 @@ public class BattleStateMachine : MonoBehaviour {
     /// </summary>
     /// <param name = "won"><para>True - Hero(s) won the game</para><para>False - Enemies won the game</para></param>
     public void ResetAfterBattle(bool won) {
-        JNRCharacterController.isInFight = false;
+        //JNRCharacterController.isInFight = false;
+        PlayerController.isInFight = false;
         AudioSource audio = GetComponent<AudioSource>();
         audio.Pause();
         audio.time = 0;
@@ -307,8 +310,10 @@ public class BattleStateMachine : MonoBehaviour {
         }
         herosToManage.Clear();
         performList.Clear();
-        JNRCharacterController.isInFight = false;
-        JNRCharacterController.hero.SetActive(true);
+        //JNRCharacterController.isInFight = false;
+        //JNRCharacterController.hero.SetActive(true);
+        PlayerController.isInFight = false;
+        PlayerController.hero.SetActive(true);
         battleStates = PerformAction.wait;
         heroInput = HeroGUI.activate;
         GameManager.instance.gui.SetActive(false);
@@ -318,6 +323,7 @@ public class BattleStateMachine : MonoBehaviour {
         rot.y = 0f;
         cam.transform.rotation = rot;
 
-        GameManager.PlayMusic(JNRCharacterController.audio_JnR);
+        //GameManager.PlayMusic(JNRCharacterController.audio_JnR);
+        GameManager.PlayMusic(PlayerController.audio_JnR);
     }
 }

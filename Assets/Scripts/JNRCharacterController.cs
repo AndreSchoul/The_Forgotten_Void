@@ -1,7 +1,6 @@
 ﻿// Author: André Schoul
 
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class JNRCharacterController : MonoBehaviour {
@@ -9,8 +8,8 @@ public class JNRCharacterController : MonoBehaviour {
     public enum AnimationStance {
         idle,
         walk,
-        jump,
-        land,
+        jumpUp,
+        jumpDown,
         attack
     }
     [HideInInspector]
@@ -57,15 +56,15 @@ public class JNRCharacterController : MonoBehaviour {
             isGrounded = Physics2D.OverlapCircle(groundDetector.position, 1F, whatIsGrounded);
             if (isGrounded && Input.GetButtonDown("Jump")) {
                 rb2d.velocity = Vector2.up * jumpVelocity;
-                animationStance = AnimationStance.jump;
+                animationStance = AnimationStance.jumpUp;
             }
             if (rb2d.velocity.y > 0 && !Input.GetButton("Jump")) {
                 rb2d.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
-                animationStance = AnimationStance.jump;
+                animationStance = AnimationStance.jumpUp;
             }
             if (rb2d.velocity.y < 0) {
                 rb2d.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
-                animationStance = AnimationStance.land;
+                animationStance = AnimationStance.jumpDown;
             }
         }
     }
