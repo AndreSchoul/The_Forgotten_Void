@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 61811098435774836}
   - component: {fileID: 114688237149260532}
   - component: {fileID: 82176484487860046}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: MovableStone
   m_TagString: Interactable
   m_Icon: {fileID: 0}

@@ -86,10 +86,13 @@ public class LevelGenerator : MonoBehaviour {
                 if (colorMapping.color.Equals(map.GetPixel(x, y)) && map.GetPixel(x, y) != new Color(0, 0, 0, 1)) {
                     Vector2 position = new Vector2(x * tileLength, y * tileLength);
 
-
+                    /*
                     if (colorMapping == colorMappings[12]) Instantiate(colorMapping.prefab, new Vector2(position.x + 1.3f, position.y + 1.3f), Quaternion.identity, transform);
                     else if (colorMapping == colorMappings[13]) Instantiate(colorMapping.prefab, new Vector2(position.x, position.y + 0.5f), Quaternion.identity, transform);
                     else if (colorMapping == colorMappings[14]) Instantiate(colorMapping.prefab, new Vector2(position.x + 1.25f, position.y + 1f), Quaternion.identity, transform);
+                    else Instantiate(colorMapping.prefab, position, Quaternion.identity, transform);*/
+
+                    if (colorMapping == colorMappings[14]) Instantiate(colorMapping.prefab, new Vector2(position.x + 1.25f, position.y + 1f), Quaternion.identity, transform);
                     else Instantiate(colorMapping.prefab, position, Quaternion.identity, transform);
                 }
             }

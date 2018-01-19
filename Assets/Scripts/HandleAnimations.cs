@@ -43,16 +43,16 @@ public class HandleAnimations : MonoBehaviour {
                 break;
             //case (JNRCharacterController.AnimationStance.jumpUp):
             case (PlayerController.AnimationStance.jumpUp):
-                //if (Input.GetAxis("Horizontal") == 0) animator.SetFloat("movement", 0);
-                //else animator.SetFloat("movement", 1);
+                if (Input.GetAxis("Horizontal") == 0) animator.SetFloat("movement", 0);
+                else animator.SetFloat("movement", 1);
                 animator.SetBool("isWalking", false);
                 animator.SetBool("isIdling", false);
                 animator.SetTrigger("isJumping");
                 break;
             //case (JNRCharacterController.AnimationStance.jumpDown):
             case (PlayerController.AnimationStance.jumpDown):
-                //if (Input.GetAxis("Horizontal") == 0) animator.SetFloat("movement", 0);
-                //else animator.SetFloat("movement", 1);
+                if (Input.GetAxis("Horizontal") == 0) animator.SetFloat("movement", 0);
+                else animator.SetFloat("movement", 1);
                 animator.SetBool("isWalking", false);
                 animator.SetBool("isIdling", false);
                 animator.SetBool("isLanding", true);

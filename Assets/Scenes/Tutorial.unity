@@ -1844,7 +1844,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 20.5015
+  orthographic size: 17.5095
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -3357,6 +3357,61 @@ MonoBehaviour:
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 0}
   m_AttachedIK: {fileID: 0}
+--- !u!1001 &1382669055
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4355871174873058, guid: 3509ff10866b9504890c837c7d84edf5, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 22.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4355871174873058, guid: 3509ff10866b9504890c837c7d84edf5, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 4355871174873058, guid: 3509ff10866b9504890c837c7d84edf5, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4355871174873058, guid: 3509ff10866b9504890c837c7d84edf5, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4355871174873058, guid: 3509ff10866b9504890c837c7d84edf5, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4355871174873058, guid: 3509ff10866b9504890c837c7d84edf5, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4355871174873058, guid: 3509ff10866b9504890c837c7d84edf5, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4355871174873058, guid: 3509ff10866b9504890c837c7d84edf5, type: 2}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4355871174873058, guid: 3509ff10866b9504890c837c7d84edf5, type: 2}
+      propertyPath: m_LocalScale.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1528368477455012, guid: 3509ff10866b9504890c837c7d84edf5, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 61811098435774836, guid: 3509ff10866b9504890c837c7d84edf5,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 2.6
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 3509ff10866b9504890c837c7d84edf5, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &1404593877
 Prefab:
   m_ObjectHideFlags: 0
@@ -3372,12 +3427,12 @@ Prefab:
     - target: {fileID: 224371917361434758, guid: f2aa6c4560984234682acb8d6cad7194,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 558.5
+      value: 524
       objectReference: {fileID: 0}
     - target: {fileID: 224371917361434758, guid: f2aa6c4560984234682acb8d6cad7194,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 229
+      value: 183.5
       objectReference: {fileID: 0}
     - target: {fileID: 224371917361434758, guid: f2aa6c4560984234682acb8d6cad7194,
         type: 2}

@@ -29,12 +29,15 @@ public class PlayerController : MonoBehaviour {
     public static bool isInFight = false;
     public static GameObject hero;
 
-    private float originOffset = 1.41f;
+    private float originOffset = 1.1f;
     private float walkTime = 0f;
     private float distanceToObject;
+    private float distanceObjectToWall;
     private Transform groundDetector;
     private LayerMask whatIsGrounded;
     private Rigidbody2D rb2d;
+    private RaycastHit2D playerHit;
+    private RaycastHit2D objectHit;
 
     private void Awake() {
         rb2d = GetComponent<Rigidbody2D>();
@@ -54,14 +57,17 @@ public class PlayerController : MonoBehaviour {
 
     private void FixedUpdate() {
         Vector2 direction = new Vector2(1, 0);
-        if (rb2d.transform.forward.z < 0) direction *= -1;
-        RaycastHit2D hit = CheckRaycast(direction);
-        if (hit.collider) {
-            if (rb2d.transform.forward.z < 0) distanceToObject = transform.position.x - originOffset - hit.collider.transform.position.x - 2.6f;
-            else distanceToObject = transform.position.x + originOffset - hit.collider.transform.position.x;
+        float objectOffset = 2.6f;
+        if (rb2d.transform.forward.z < 0) {
+            direction *= -1;
+            objectOffset = 0.1f;
+        } 
+        playerHit = CheckRaycast(this.gameObject, direction, originOffset, false);
+        if (playerHit.collider != null) {
+            if (playerHit.collider.gameObject.layer == 9) objectHit = CheckRaycast(playerHit.collider.gameObject, direction, objectOffset, true);
         }
     }
-
+    
     private void Jump() {
         isGrounded = Physics2D.OverlapCircle(groundDetector.position, 1F, whatIsGrounded);
         if (isGrounded && Input.GetButtonDown("Jump")) {
@@ -80,12 +86,14 @@ public class PlayerController : MonoBehaviour {
         
     private void Movement() {
         movementSpeed = Mathf.Clamp(movementSpeed, minMovementSpeed, maxMovementSpeed);
-        if (distanceToObject < 0.35f && distanceToObject > -0.35f) {
-            if (rb2d.transform.forward.z > 0 && Input.GetAxis("Horizontal") > 0 || rb2d.transform.forward.z < 0 && Input.GetAxis("Horizontal") < 0) {                
-                walkTime = 0f;
-                movementSpeed = minMovementSpeed;
-                animationStance = AnimationStance.idle;
-                //return;
+        if (playerHit.collider != null) {
+            if (playerHit.collider.gameObject.layer == 9 && playerHit.distance < 0.1f && objectHit.distance < 0.1f || playerHit.collider.gameObject.layer != 9 && playerHit.distance < 0.1f) {
+                if (rb2d.transform.forward.z > 0 && Input.GetAxis("Horizontal") > 0 || rb2d.transform.forward.z < 0 && Input.GetAxis("Horizontal") < 0) {
+                    walkTime = 0f;
+                    movementSpeed = minMovementSpeed;
+                    animationStance = AnimationStance.idle;
+                    return;
+                }
             }
         }
         if (Input.GetAxis("Horizontal") == 0) {
@@ -101,12 +109,14 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-    private RaycastHit2D CheckRaycast(Vector2 direction) {
-        float directionOriginOffset = originOffset * (direction.x > 0 ? 1 : -1);
-        Vector2 startingPosition = new Vector2(transform.position.x + directionOriginOffset, transform.position.y);
-        return Physics2D.Raycast(startingPosition, direction);
+    private RaycastHit2D CheckRaycast(GameObject from, Vector2 direction, float offset, bool withLayerMask) {
+        float directionOriginOffset = offset * (direction.x > 0 ? 1 : -1);
+        Vector2 startingPosition = new Vector2(from.transform.position.x + directionOriginOffset, from.transform.position.y);
+        if (withLayerMask) {
+            int layerMask = 1 << 8;
+            return Physics2D.Raycast(startingPosition, direction, Mathf.Infinity, layerMask);
+        } else return Physics2D.Raycast(startingPosition, direction);
     }
-
 
     /// <summary>
     /// Checks collider to know what the hero is interacting with and acts accordingly.
