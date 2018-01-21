@@ -430,7 +430,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1864599140564250
 GameObject:
   m_ObjectHideFlags: 1
@@ -516,8 +516,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1703602114810530}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 5.499071, y: 6.3833804, z: 0}
+  m_LocalScale: {x: -0.2, y: 0.2, z: 0.2}
   m_Children:
   - {fileID: 4733323277701888}
   - {fileID: 4427630918550326}
@@ -964,7 +964,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 3.8000016
+  m_Length: 3.800004
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4748294950422456}
   m_AttachedIK: {fileID: 114717867828954024}
@@ -1083,7 +1083,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 4.000001
+  m_Length: 4.000002
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4908780311521096}
   m_AttachedIK: {fileID: 114263234112662802}
@@ -1099,7 +1099,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 4.0005608
+  m_Length: 4.0005603
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4287177248475416}
   m_AttachedIK: {fileID: 114263234112662802}
@@ -1170,7 +1170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 2.6845965
+  m_Length: 2.684595
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4398268944624330}
   m_AttachedIK: {fileID: 114717867828954024}
@@ -1208,7 +1208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 2.0000012
+  m_Length: 2.0000024
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4895357577483386}
   m_AttachedIK: {fileID: 114406296909603448}
@@ -1283,7 +1283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 2.0000012
+  m_Length: 2.000002
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4779877852410290}
   m_AttachedIK: {fileID: 114871468313562648}
@@ -1402,7 +1402,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 2.7000008
+  m_Length: 2.7000012
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4719119865960698}
   m_AttachedIK: {fileID: 114234929667685444}
@@ -1455,7 +1455,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 3.8000064
+  m_Length: 3.800011
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4378188851057952}
   m_AttachedIK: {fileID: 114234929667685444}
@@ -1601,8 +1601,8 @@ SkinnedMeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1810933059
+  m_SortingLayer: 6
   m_SortingOrder: 13
   serializedVersion: 2
   m_Quality: 0
@@ -1650,8 +1650,8 @@ SkinnedMeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1810933059
+  m_SortingLayer: 6
   m_SortingOrder: 12
   serializedVersion: 2
   m_Quality: 0
@@ -1698,8 +1698,8 @@ SkinnedMeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1810933059
+  m_SortingLayer: 6
   m_SortingOrder: 14
   serializedVersion: 2
   m_Quality: 0
@@ -1746,8 +1746,8 @@ SkinnedMeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1810933059
+  m_SortingLayer: 6
   m_SortingOrder: 13
   serializedVersion: 2
   m_Quality: 0
@@ -1793,8 +1793,8 @@ SkinnedMeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1810933059
+  m_SortingLayer: 6
   m_SortingOrder: 11
   serializedVersion: 2
   m_Quality: 0
@@ -1842,8 +1842,8 @@ SkinnedMeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1810933059
+  m_SortingLayer: 6
   m_SortingOrder: 10
   serializedVersion: 2
   m_Quality: 0
