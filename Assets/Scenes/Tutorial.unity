@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.574817, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1844,7 +1844,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 17.5095
+  orthographic size: 18.615
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -3372,12 +3372,12 @@ Prefab:
     - target: {fileID: 224371917361434758, guid: f2aa6c4560984234682acb8d6cad7194,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 524
+      value: 718.5
       objectReference: {fileID: 0}
     - target: {fileID: 224371917361434758, guid: f2aa6c4560984234682acb8d6cad7194,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 183.5
+      value: 267.5
       objectReference: {fileID: 0}
     - target: {fileID: 224371917361434758, guid: f2aa6c4560984234682acb8d6cad7194,
         type: 2}
@@ -3829,7 +3829,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ac47449efb1f0f74d8fc0e26969875c9, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.1
   m_Pitch: 1.25
   Loop: 1
   Mute: 0
@@ -4949,6 +4949,12 @@ MonoBehaviour:
     prefab: {fileID: 1781260934221016, guid: a0cd7a3f5b5c5b74e976755392360747, type: 2}
   - color: {r: 0, g: 0.39215687, b: 0, a: 1}
     prefab: {fileID: 1449680747875930, guid: 6158ad3393c1ec44f908936919e2ca5c, type: 2}
+  - color: {r: 0.39215687, g: 0, b: 0.26666668, a: 1}
+    prefab: {fileID: 1630846026906802, guid: e4684d51cfe281342bf23ea4e220e753, type: 2}
+  - color: {r: 0.13725491, g: 0, b: 0.39215687, a: 1}
+    prefab: {fileID: 1184220547462190, guid: bd39b5583db02544b92e6a4816f20d4c, type: 2}
+  - color: {r: 0, g: 0.16470589, b: 0.39215687, a: 1}
+    prefab: {fileID: 1703602114810530, guid: 4e6a89cbd6ca48748964c50af7a60c3b, type: 2}
 --- !u!4 &1813400178
 Transform:
   m_ObjectHideFlags: 0

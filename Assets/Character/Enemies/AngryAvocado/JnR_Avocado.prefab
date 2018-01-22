@@ -284,7 +284,7 @@ GameObject:
   - component: {fileID: 70368572884323816}
   - component: {fileID: 114576612474896488}
   m_Layer: 0
-  m_Name: Avocado_JnR
+  m_Name: JnR_Avocado
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

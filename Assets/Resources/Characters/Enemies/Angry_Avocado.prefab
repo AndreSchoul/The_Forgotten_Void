@@ -285,7 +285,7 @@ GameObject:
   - component: {fileID: 114386785766020578}
   - component: {fileID: 114887377768587924}
   m_Layer: 0
-  m_Name: Avocado_Battle
+  m_Name: Angry_Avocado
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
