@@ -285,7 +285,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1653726840847078
 GameObject:
   m_ObjectHideFlags: 1
@@ -510,7 +510,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1103270943584280}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.36, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4602182438246782}
@@ -804,7 +804,7 @@ Animator:
   m_GameObject: {fileID: 1103270943584280}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e8dfd2ac4be624246b5cf45ea3c96726, type: 2}
+  m_Controller: {fileID: 9100000, guid: b12597e5a4992874cb01a31579e29d9f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1117,7 +1117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 2.0001109
+  m_Length: 2.0001106
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4105075452407758}
   m_AttachedIK: {fileID: 114458110693646068}
@@ -1170,7 +1170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 1.0000014
+  m_Length: 1.0000012
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4593172862080514}
   m_AttachedIK: {fileID: 114819035794436646}
