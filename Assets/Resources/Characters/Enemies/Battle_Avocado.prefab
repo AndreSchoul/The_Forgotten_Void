@@ -38,9 +38,9 @@ GameObject:
   - component: {fileID: 70018200047767646}
   - component: {fileID: 114252701732948770}
   - component: {fileID: 82131286405730244}
-  - component: {fileID: 114314331969400064}
+  - component: {fileID: 114710109223247468}
   m_Layer: 0
-  m_Name: Battle_Avocado 1
+  m_Name: Battle_Avocado
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -714,7 +714,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1184220547462190}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.5, y: -3, z: 0}
+  m_LocalPosition: {x: 0, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4782665278512212}
@@ -826,8 +826,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1978514673235510}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.5, y: 3, z: 0}
-  m_LocalScale: {x: -0.5, y: 0.5, z: 0.5}
+  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children:
   - {fileID: 4468290358645642}
   - {fileID: 4926128152182450}
@@ -845,8 +845,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1247285311940396}
   m_LocalRotation: {x: 0.46193978, y: -0.19134173, z: -0.19134173, w: 0.84462327}
-  m_LocalPosition: {x: 0.20000005, y: 6.5, z: 0}
-  m_LocalScale: {x: -0.5, y: 0.5000002, z: 0.5000023}
+  m_LocalPosition: {x: -4, y: 10.5, z: 0}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4531304441520704}
   m_RootOrder: 0
@@ -1015,8 +1015,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.32, y: 2.68}
-  m_Size: {x: 3.35, y: 5.53}
+  m_Offset: {x: -4.35, y: 2.5}
+  m_Size: {x: 5.7, y: 11}
   m_Direction: 0
 --- !u!82 &82131286405730244
 AudioSource:
@@ -1027,10 +1027,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
+  m_audioClip: {fileID: 8300000, guid: 9d2cdee814d00cb499916883c72fcfc8, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.5
+  m_Pitch: 1.75
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -1107,7 +1107,7 @@ Animator:
   m_GameObject: {fileID: 1978514673235510}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 97dff15af56042a46b25a3836097eb74, type: 2}
+  m_Controller: {fileID: 22100000, guid: 452c3ea2fedccc343a819843b4cebf5c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1255,7 +1255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 2.0001085
+  m_Length: 2.0001082
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4736363264708066}
   m_AttachedIK: {fileID: 0}
@@ -1417,17 +1417,6 @@ MonoBehaviour:
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4546163933821658}
   m_AttachedIK: {fileID: 0}
---- !u!114 &114314331969400064
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1184220547462190}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c365a321704364a448a1f9d28f24c160, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114350905004404796
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1662,6 +1651,17 @@ MonoBehaviour:
     targetPosition: {x: 0.14400005, y: -5.9500003, z: 0}
     iterations: 10
     damping: 0.8
+--- !u!114 &114710109223247468
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1184220547462190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac50a9dcbd84b16489afd5449a5463de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114717604644066420
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -714,8 +714,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1184220547462190}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.5, y: -3, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children:
   - {fileID: 4782665278512212}
   - {fileID: 4751504208573630}
@@ -826,8 +826,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1978514673235510}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.5, y: 3, z: 0}
-  m_LocalScale: {x: -0.5, y: 0.5, z: 0.5}
+  m_LocalPosition: {x: 0, y: -2.3, z: 0}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children:
   - {fileID: 4468290358645642}
   - {fileID: 4926128152182450}
@@ -845,8 +845,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1247285311940396}
   m_LocalRotation: {x: 0.46193978, y: -0.19134173, z: -0.19134173, w: 0.84462327}
-  m_LocalPosition: {x: 0.20000005, y: 6.5, z: 0}
-  m_LocalScale: {x: -0.5, y: 0.5000002, z: 0.5000023}
+  m_LocalPosition: {x: -5.12, y: 5, z: 0}
+  m_LocalScale: {x: -0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 4531304441520704}
   m_RootOrder: 0
@@ -1035,8 +1035,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.32, y: 2.68}
-  m_Size: {x: 3.35, y: 5.53}
+  m_Offset: {x: -4.3, y: -2.95}
+  m_Size: {x: 6.5, y: 11}
   m_Direction: 0
 --- !u!82 &82302082499198200
 AudioSource:
@@ -1222,7 +1222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.7000007
+  m_Length: 0.7000002
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4663164840704312}
   m_AttachedIK: {fileID: 0}
@@ -1275,7 +1275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 2.0001085
+  m_Length: 2.0001082
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4736363264708066}
   m_AttachedIK: {fileID: 0}
@@ -1291,7 +1291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characters:
-  - Characters/Enemies/Angry_Avocado
+  - Characters/Enemies/Battle_Avocado
   - Characters/Enemies/Battle_Avocado
 --- !u!114 &114221586183242976
 MonoBehaviour:
@@ -1393,7 +1393,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.7000011
+  m_Length: 0.70000064
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4656267555116364}
   m_AttachedIK: {fileID: 0}
@@ -1409,7 +1409,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.65000176
+  m_Length: 0.6500008
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4546163933821658}
   m_AttachedIK: {fileID: 0}
@@ -1534,7 +1534,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.6500025
+  m_Length: 0.65000105
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4828602554832680}
   m_AttachedIK: {fileID: 0}
@@ -1550,7 +1550,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 2.3500013
+  m_Length: 2.3500004
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4141220425895604}
   m_AttachedIK: {fileID: 0}
@@ -1744,7 +1744,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 2.3500004
+  m_Length: 2.3500009
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4838207569793758}
   m_AttachedIK: {fileID: 0}

@@ -264,7 +264,7 @@ GameObject:
   - component: {fileID: 4955424899373958}
   - component: {fileID: 70675834307165748}
   m_Layer: 0
-  m_Name: JnR_Robot
+  m_Name: Battle_Robot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
