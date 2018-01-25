@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 50194122613986008}
   - component: {fileID: 82302082499198200}
   - component: {fileID: 114216467043473336}
+  - component: {fileID: 114744137553636666}
   m_Layer: 0
   m_Name: JnR_Avocado
   m_TagString: Enemy
@@ -826,7 +827,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1978514673235510}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.3, z: 0}
+  m_LocalPosition: {x: 0, y: 6, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children:
   - {fileID: 4468290358645642}
@@ -1035,7 +1036,7 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -4.3, y: -2.95}
+  m_Offset: {x: -4.3, y: 5.45}
   m_Size: {x: 6.5, y: 11}
   m_Direction: 0
 --- !u!82 &82302082499198200
@@ -1222,7 +1223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.7000002
+  m_Length: 0.7000007
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4663164840704312}
   m_AttachedIK: {fileID: 0}
@@ -1275,7 +1276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 2.0001082
+  m_Length: 2.0001085
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4736363264708066}
   m_AttachedIK: {fileID: 0}
@@ -1393,7 +1394,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.70000064
+  m_Length: 0.7000011
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4656267555116364}
   m_AttachedIK: {fileID: 0}
@@ -1409,7 +1410,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.6500008
+  m_Length: 0.65000176
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4546163933821658}
   m_AttachedIK: {fileID: 0}
@@ -1534,7 +1535,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.65000105
+  m_Length: 0.6500025
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4828602554832680}
   m_AttachedIK: {fileID: 0}
@@ -1550,7 +1551,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 2.3500004
+  m_Length: 2.3500013
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4141220425895604}
   m_AttachedIK: {fileID: 0}
@@ -1700,6 +1701,21 @@ MonoBehaviour:
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 0}
   m_AttachedIK: {fileID: 0}
+--- !u!114 &114744137553636666
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1184220547462190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d384759c8b7940e49be30e54f44599ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  waypointPositions:
+  - {x: 1, y: 0, z: 0}
+  - {x: -1, y: 0, z: 0}
 --- !u!114 &114795807748438728
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1712,7 +1728,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 2.0000515
+  m_Length: 2.000052
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4424376136083054}
   m_AttachedIK: {fileID: 0}
@@ -1744,7 +1760,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 2.3500009
+  m_Length: 2.3500004
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4838207569793758}
   m_AttachedIK: {fileID: 0}
