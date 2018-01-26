@@ -39,7 +39,6 @@ GameObject:
   - component: {fileID: 50194122613986008}
   - component: {fileID: 82302082499198200}
   - component: {fileID: 114216467043473336}
-  - component: {fileID: 114744137553636666}
   m_Layer: 0
   m_Name: JnR_Avocado
   m_TagString: Enemy
@@ -1701,21 +1700,6 @@ MonoBehaviour:
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 0}
   m_AttachedIK: {fileID: 0}
---- !u!114 &114744137553636666
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1184220547462190}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d384759c8b7940e49be30e54f44599ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 2
-  waypointPositions:
-  - {x: 1, y: 0, z: 0}
-  - {x: -1, y: 0, z: 0}
 --- !u!114 &114795807748438728
 MonoBehaviour:
   m_ObjectHideFlags: 1
