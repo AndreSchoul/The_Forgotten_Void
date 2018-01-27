@@ -38,6 +38,7 @@ public class PlayerController : MonoBehaviour {
     private Rigidbody2D rb2d;
     private RaycastHit2D playerHit;
     private RaycastHit2D objectHit;
+    private Vector2 spawnPositionJNR;
 
     private void Awake() {
         rb2d = GetComponent<Rigidbody2D>();
@@ -48,6 +49,7 @@ public class PlayerController : MonoBehaviour {
         movementSpeed = minMovementSpeed;
         audio_JnR = this.GetComponent<AudioSource>();
         audio_JnR.Play();
+        spawnPositionJNR = new Vector2(transform.position.x, transform.position.y);
     }
 
     private void Update() {
@@ -150,6 +152,16 @@ public class PlayerController : MonoBehaviour {
                 GameManager.PlayMusic(bsm.GetComponent<AudioSource>());
             }
         }
+    }
+
+    public void respawn()
+    {
+        transform.position = spawnPositionJNR;
+    }
+
+    public void setRespawnPosition(Vector3 spawnPoint)
+    {
+        spawnPositionJNR = spawnPoint;
     }
 }
 
