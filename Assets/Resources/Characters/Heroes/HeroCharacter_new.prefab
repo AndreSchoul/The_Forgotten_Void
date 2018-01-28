@@ -332,7 +332,7 @@ GameObject:
   - component: {fileID: 50107192407805850}
   - component: {fileID: 114574840448515542}
   - component: {fileID: 114298172203471048}
-  - component: {fileID: 114670838512968530}
+  - component: {fileID: 114273941285027268}
   m_Layer: 0
   m_Name: HeroCharacter_new
   m_TagString: Hero
@@ -758,7 +758,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1480401489185106}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 15, y: 25, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children:
   - {fileID: 4675519460747222}
@@ -1178,7 +1178,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!70 &70998207005882968
 CapsuleCollider2D:
@@ -1206,7 +1206,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ac47449efb1f0f74d8fc0e26969875c9, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.1
   m_Pitch: 1.25
   Loop: 1
   Mute: 0
@@ -1391,7 +1391,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 3.0002294
+  m_Length: 3.0002337
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4673393144819308}
   m_AttachedIK: {fileID: 0}
@@ -1428,7 +1428,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 3.5000012
+  m_Length: 3.4999988
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4820376052636520}
   m_AttachedIK: {fileID: 0}
@@ -1460,10 +1460,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 3.5000014
+  m_Length: 3.5000052
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4102997399841248}
   m_AttachedIK: {fileID: 0}
+--- !u!114 &114273941285027268
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1480401489185106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b76fd7d536eddb4b82c6006fe23807c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationStance: 0
+  isGrounded: 1
+  movementSpeed: 0
+  minMovementSpeed: 15
+  maxMovementSpeed: 25
+  jumpVelocity: 21
+  fallMultiplier: 15
+  lowJumpMultiplier: 5
+  spawnPointsHeros:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  spawnPointsEnemies:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &114290397787563332
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1476,7 +1517,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 2.0000043
+  m_Length: 2.0000033
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4830780405310000}
   m_AttachedIK: {fileID: 0}
@@ -1767,51 +1808,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 4.000001
+  m_Length: 4.000002
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4527021679295960}
   m_AttachedIK: {fileID: 0}
---- !u!114 &114670838512968530
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1480401489185106}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b76fd7d536eddb4b82c6006fe23807c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animationStance: 0
-  isGrounded: 1
-  movementSpeed: 0
-  minMovementSpeed: 15
-  maxMovementSpeed: 25
-  jumpVelocity: 21
-  fallMultiplier: 15
-  lowJumpMultiplier: 5
-  spawnPointsHeros:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  spawnPointsEnemies:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!114 &114713317049320560
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1927,7 +1927,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 3.75
+  m_Length: 3.7500024
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4438277334513332}
   m_AttachedIK: {fileID: 0}
@@ -1980,7 +1980,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 3.7500002
+  m_Length: 3.7499967
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4231986043276780}
   m_AttachedIK: {fileID: 0}
@@ -2122,7 +2122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 2.0000024
+  m_Length: 2.0000017
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4821854759969592}
   m_AttachedIK: {fileID: 0}

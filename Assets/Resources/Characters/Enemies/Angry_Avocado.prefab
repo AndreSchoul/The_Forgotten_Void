@@ -282,9 +282,10 @@ GameObject:
   - component: {fileID: 114032616622407242}
   - component: {fileID: 95897733201105400}
   - component: {fileID: 70368572884323816}
-  - component: {fileID: 114576612474896488}
+  - component: {fileID: 114386785766020578}
+  - component: {fileID: 114887377768587924}
   m_Layer: 0
-  m_Name: Avocado_JnR
+  m_Name: Angry_Avocado
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -895,7 +896,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 4.42, y: -0.4}
@@ -1151,6 +1152,44 @@ MonoBehaviour:
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 0}
   m_AttachedIK: {fileID: 114791250471605716}
+--- !u!114 &114386785766020578
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1490002405494342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4099e0eae25ce9447876dfe1cff7bd79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentState: 0
+  baseClass:
+    name_: 
+    baseHP: 0
+    baseMP: 0
+    baseATK: 0
+    baseDEF: 0
+    currentHP: 0
+    currentMP: 0
+    currentATK: 0
+    currentDEF: 0
+    level: 0
+    attacks: []
+    actionPointAttacks: []
+    luck: 0
+    stamina: 0
+    agility: 0
+    dexterity: 0
+    intelligence: 0
+    criticalHitChance: 0
+  selector: {fileID: 1818754782439574, guid: aa83a5c14c9b8114cbf2378481b406f9, type: 2}
+  healthPanel: {fileID: 1775946767262744, guid: 101805c06edc0d846a6630d49eb41515,
+    type: 2}
+  heroToAttack: {fileID: 0}
+  enemyToAttack: {fileID: 0}
+  heroStats: {fileID: 0}
+  enemyNumber: 0
 --- !u!114 &114389628444989048
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1270,43 +1309,6 @@ MonoBehaviour:
     m_RestoreDefaultPose: 1
     targetPosition: {x: -0.85599995, y: -6.15, z: 0}
     flip: 1
---- !u!114 &114576612474896488
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1490002405494342}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4099e0eae25ce9447876dfe1cff7bd79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentState: 0
-  baseClass:
-    name_: 
-    baseHP: 0
-    baseMP: 0
-    baseATK: 0
-    baseDEF: 0
-    currentHP: 0
-    currentMP: 0
-    currentATK: 0
-    currentDEF: 0
-    level: 0
-    attacks: []
-    actionPointAttacks: []
-    luck: 0
-    stamina: 0
-    agility: 0
-    dexterity: 0
-    intelligence: 0
-    criticalHitChance: 0
-  selector: {fileID: 0}
-  healthPanel: {fileID: 0}
-  heroToAttack: {fileID: 0}
-  enemyToAttack: {fileID: 0}
-  heroStats: {fileID: 0}
-  enemyNumber: 0
 --- !u!114 &114610051471457358
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1501,6 +1503,17 @@ MonoBehaviour:
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 0}
   m_AttachedIK: {fileID: 114994159656721206}
+--- !u!114 &114887377768587924
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1490002405494342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c365a321704364a448a1f9d28f24c160, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114923425615747850
 MonoBehaviour:
   m_ObjectHideFlags: 1

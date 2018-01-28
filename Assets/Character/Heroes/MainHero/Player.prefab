@@ -2109,7 +2109,7 @@ MonoBehaviour:
   - Characters/Heroes/HeroCharacter
   - Characters/Heroes/HeroCharacter
   - Characters/Heroes/HeroCharacter
-  - Characters/Heroes/HeroCharacter
+  - Characters/Heroes/Battle_Hero
 --- !u!114 &114986781879645144
 MonoBehaviour:
   m_ObjectHideFlags: 1

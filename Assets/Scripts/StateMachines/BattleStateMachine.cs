@@ -280,9 +280,10 @@ public class BattleStateMachine : MonoBehaviour {
         AudioSource audio = GetComponent<AudioSource>();
         audio.Pause();
         audio.time = 0;
-        if(won) {
+        if (won) {
             Debug.Log("You won the battle!");
-            Destroy(GameManager.instance.collidedEnemy);          
+            Destroy(GameManager.instance.collidedEnemy);
+            
         } else {
             Debug.Log("You lost the battle!");
             // TODO send player back to start/checkpoint/space station or alike
@@ -311,6 +312,7 @@ public class BattleStateMachine : MonoBehaviour {
         //JNRCharacterController.isInFight = false;
         //JNRCharacterController.hero.SetActive(true);
         PlayerController.isInFight = false;
+        
         PlayerController.hero.SetActive(true);
         battleStates = PerformAction.wait;
         heroInput = HeroGUI.activate;
