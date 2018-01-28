@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class JNRWayPointWalk : MonoBehaviour {
 
-    public float speed = 1;
+    public float movementSpeed = 1.05f;
     public List<Vector3> waypointPositions;
     int currentWaypoint = 0;
     private Animator ani;
@@ -75,7 +75,7 @@ public class JNRWayPointWalk : MonoBehaviour {
 
     void Move()
     {
-        moveDirection = targetPositionDelta.normalized * speed;
+        moveDirection = targetPositionDelta.normalized * movementSpeed;
         transform.Translate(moveDirection * Time.deltaTime, Space.World);
     }
 
