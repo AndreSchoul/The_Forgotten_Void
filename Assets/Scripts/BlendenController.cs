@@ -76,7 +76,7 @@ public class BlendenController : MonoBehaviour {
                 if (blende.color.a <= 0)
                 {
                     wirdHell = false;
-                    isBlenden = false;                    
+                    isBlenden = false;
                 }
             }
         }
