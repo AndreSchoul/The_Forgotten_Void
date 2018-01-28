@@ -14,7 +14,7 @@ public class StoneController : MonoBehaviour {
     private void Start()
     {
         spawnPosition = transform.position;
-        toleranzY = spawnPosition.y - 5;
+        toleranzY = spawnPosition.y - 2.5f;
         dieSound = GetComponent<AudioSource>();
         if (firstObject == false)
         {
@@ -26,15 +26,14 @@ public class StoneController : MonoBehaviour {
     // Update is called once per frame
     void Update () {        
         if (transform.position.y < toleranzY)
-        {
-            
+        {            
             GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
             firstObject = false;
             Instantiate(gameObject, spawnPosition, Quaternion.identity);          
             Destroy(gameObject);            
         }
 	}
-    
+
     private void OnDestroy()
     {
         

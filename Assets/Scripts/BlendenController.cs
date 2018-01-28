@@ -39,11 +39,11 @@ public class BlendenController : MonoBehaviour {
                 cam.transform.Rotate(0,0, rotationsGeschwindigkeit);
 
                 // Wenn Schwarz Kamera auf Kampfposition bringen
+                Debug.Log(blende.color.a + " " + cam.transform.position);
                 if(blende.color.a >= 1)
                 {
-                    //if (JNRCharacterController.isInFight)
-                    if (PlayerController.isInFight) {
-                        //cam.transform.position = new Vector3(-200, 0, 10);
+                    // Wenn im Kampf
+                    if (PlayerController.isInFight) {                        
                         cam.transform.position = new Vector3(-200, 0, -25);
                         cam.transform.Rotate(0, 0, cam.transform.eulerAngles.z * -1f);                       
                     }
@@ -76,7 +76,7 @@ public class BlendenController : MonoBehaviour {
                 if (blende.color.a <= 0)
                 {
                     wirdHell = false;
-                    isBlenden = false;                    
+                    isBlenden = false;
                 }
             }
         }
