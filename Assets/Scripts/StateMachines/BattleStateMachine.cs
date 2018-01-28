@@ -36,9 +36,7 @@ public class BattleStateMachine : MonoBehaviour {
     private  HandleTurns heroChoice;
     public bool createAttackPanelOnce = true;
 
-
     public GameObject detectedTarget;
-
 
     // Use this for initialization
     void Start() {

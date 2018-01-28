@@ -43,7 +43,6 @@ public class CharacterStateMaschine : MonoBehaviour {
     private GameObject cam;
     private bool doWait = true;
 
-
     public static int lastEnemey = 0;
     public int enemyNumber = 0;
 
