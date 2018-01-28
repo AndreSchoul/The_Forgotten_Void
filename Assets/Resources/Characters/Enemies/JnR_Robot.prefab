@@ -1480,7 +1480,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characters:
   - Characters/Enemies/Battle_Robot
-  - Characters/Enemies/Battle_Robot
 --- !u!114 &114680592338407604
 MonoBehaviour:
   m_ObjectHideFlags: 1
