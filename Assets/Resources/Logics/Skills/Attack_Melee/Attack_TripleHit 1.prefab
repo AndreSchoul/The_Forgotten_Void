@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4093270510384884}
   - component: {fileID: 114942341598151222}
   m_Layer: 0
-  m_Name: Attack_SuperHit
+  m_Name: Attack_TripleHit 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
