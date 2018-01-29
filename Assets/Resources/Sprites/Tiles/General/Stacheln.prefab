@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4882294914127898}
   - component: {fileID: 212251686802796932}
   - component: {fileID: 61006370650324310}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Stacheln
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4834970011185512}
   - component: {fileID: 212253119701992406}
   - component: {fileID: 61097665681548622}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Stachelbusch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
