@@ -265,8 +265,8 @@ GameObject:
   - component: {fileID: 4955424899373958}
   - component: {fileID: 70675834307165748}
   - component: {fileID: 114061768900025928}
-  - component: {fileID: 114568666412670526}
-  - component: {fileID: 82678311316585122}
+  - component: {fileID: 114994234255046620}
+  - component: {fileID: 82682521080850514}
   m_Layer: 0
   m_Name: Battle_Robot
   m_TagString: Enemy
@@ -1049,7 +1049,7 @@ CapsuleCollider2D:
   m_Offset: {x: 2.5, y: 10.3}
   m_Size: {x: 5.7, y: 20.4}
   m_Direction: 0
---- !u!82 &82678311316585122
+--- !u!82 &82682521080850514
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1058,8 +1058,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 9d2cdee814d00cb499916883c72fcfc8, type: 3}
-  m_PlayOnAwake: 0
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1.75
   Loop: 0
@@ -1458,44 +1458,6 @@ MonoBehaviour:
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4412408024062484}
   m_AttachedIK: {fileID: 0}
---- !u!114 &114568666412670526
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1547044198744190}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4099e0eae25ce9447876dfe1cff7bd79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentState: 0
-  baseClass:
-    name_: 
-    baseHP: 0
-    baseMP: 0
-    baseATK: 0
-    baseDEF: 0
-    currentHP: 0
-    currentMP: 0
-    currentATK: 0
-    currentDEF: 0
-    level: 0
-    attacks: []
-    actionPointAttacks: []
-    luck: 0
-    stamina: 0
-    agility: 0
-    dexterity: 0
-    intelligence: 0
-    criticalHitChance: 0
-  selector: {fileID: 1936887469023406}
-  healthPanel: {fileID: 1775946767262744, guid: 101805c06edc0d846a6630d49eb41515,
-    type: 2}
-  heroToAttack: {fileID: 0}
-  enemyToAttack: {fileID: 0}
-  heroStats: {fileID: 0}
-  enemyNumber: 0
 --- !u!114 &114680592338407604
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1833,6 +1795,45 @@ MonoBehaviour:
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 0}
   m_AttachedIK: {fileID: 0}
+--- !u!114 &114994234255046620
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1547044198744190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4099e0eae25ce9447876dfe1cff7bd79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentState: 0
+  baseClass:
+    name_: 
+    baseHP: 10000
+    baseMP: 1000
+    baseATK: 5
+    baseDEF: 5
+    currentHP: 100
+    currentMP: 100
+    currentATK: 5
+    currentDEF: 5
+    level: 1
+    attacks:
+    - {fileID: 114942341598151222, guid: d6c9f1ef169191e40a746b30a858a170, type: 2}
+    actionPointAttacks:
+    - {fileID: 114963686103359210, guid: 011c3c3f8f2152a4081e7d7aeab3dda1, type: 2}
+    luck: 0
+    stamina: 0
+    agility: 0
+    dexterity: 0
+    intelligence: 0
+    criticalHitChance: 0
+  selector: {fileID: 0}
+  healthPanel: {fileID: 0}
+  heroToAttack: {fileID: 0}
+  enemyToAttack: {fileID: 0}
+  heroStats: {fileID: 0}
+  enemyNumber: 0
 --- !u!137 &137366603913602756
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
