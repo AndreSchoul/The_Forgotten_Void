@@ -1286,25 +1286,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: 0
   baseClass:
-    name_: 
-    baseHP: 0
-    baseMP: 0
-    baseATK: 0
-    baseDEF: 0
-    currentHP: 0
-    currentMP: 0
-    currentATK: 0
-    currentDEF: 0
-    level: 0
-    attacks: []
-    actionPointAttacks: []
+    name_: Battle_Avocado
+    baseHP: 100
+    baseMP: 100
+    baseATK: 5
+    baseDEF: 5
+    currentHP: 100
+    currentMP: 100
+    currentATK: 5
+    currentDEF: 5
+    level: 1
+    attacks:
+    - {fileID: 114555624955635680, guid: 8ba1610d198c3fe42a7f2ff9cdbfdf5e, type: 2}
+    actionPointAttacks:
+    - {fileID: 114555624955635680, guid: 8ba1610d198c3fe42a7f2ff9cdbfdf5e, type: 2}
     luck: 0
     stamina: 0
     agility: 0
     dexterity: 0
     intelligence: 0
     criticalHitChance: 0
-  selector: {fileID: 1818754782439574, guid: aa83a5c14c9b8114cbf2378481b406f9, type: 2}
+  selector: {fileID: 1247285311940396}
   healthPanel: {fileID: 1775946767262744, guid: 101805c06edc0d846a6630d49eb41515,
     type: 2}
   heroToAttack: {fileID: 0}

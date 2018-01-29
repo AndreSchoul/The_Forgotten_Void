@@ -217,7 +217,7 @@ GameObject:
   - component: {fileID: 50856139249866326}
   - component: {fileID: 82336868155059904}
   - component: {fileID: 114833203439093460}
-  - component: {fileID: 95772891388950030}
+  - component: {fileID: 95880053558317222}
   m_Layer: 0
   m_Name: JnR_Spikehead
   m_TagString: Enemy
@@ -694,7 +694,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!95 &95772891388950030
+--- !u!95 &95880053558317222
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
@@ -703,7 +703,7 @@ Animator:
   m_GameObject: {fileID: 1630846026906802}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 662843e75b182cf43ac87dc3105cbd05, type: 2}
+  m_Controller: {fileID: 22100000, guid: 51e7fbb74aadb8946ac507c2719e4a68, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
