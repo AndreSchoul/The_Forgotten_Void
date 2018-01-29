@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4093270510384884}
   - component: {fileID: 114942341598151222}
   m_Layer: 0
-  m_Name: Attack_TripleHit 1
+  m_Name: Attack_Overkill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51,8 +51,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32d56670269316847a2844f92090206d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackName: Triple Hit
-  attackDescription: A powerful attack which hits three times
-  attackDamage: 80
-  attackCost: 3
+  attackName: Overkill
+  attackDescription: So powerful that it definitely kills the enemy instantly
+  attackDamage: 500
+  attackCost: 10
   attackType: 0

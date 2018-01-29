@@ -8,8 +8,6 @@ AnimatorOverrideController:
   m_Name: AOC-Avo
   m_Controller: {fileID: 9100000, guid: 97dff15af56042a46b25a3836097eb74, type: 2}
   m_Clips:
-  - m_OriginalClip: {fileID: 7400000, guid: a05f1b2f1f67ffd429ae1f2660b6d22e, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: a05f1b2f1f67ffd429ae1f2660b6d22e, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: da4461cc276485f4b9afa16e00f92954, type: 2}
     m_OverrideClip: {fileID: 7400000, guid: da4461cc276485f4b9afa16e00f92954, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: 04a1c91b12b5aaf488189a982561b0eb, type: 2}
@@ -20,3 +18,5 @@ AnimatorOverrideController:
     m_OverrideClip: {fileID: 7400000, guid: 0e68d1ef519aac548839ecd164c03ca2, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: b72e80ba5c566a14caac25e0c1a86339, type: 2}
     m_OverrideClip: {fileID: 7400000, guid: b72e80ba5c566a14caac25e0c1a86339, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 91e78e966d5805c45a75f84bbc583e10, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 91e78e966d5805c45a75f84bbc583e10, type: 2}
