@@ -732,7 +732,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: 0
   baseClass:
-    name_: EnemyCharacter
+    name_: Battle_Spikehead
     baseHP: 100
     baseMP: 100
     baseATK: 5

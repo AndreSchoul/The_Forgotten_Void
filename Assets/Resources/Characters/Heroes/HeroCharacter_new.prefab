@@ -1535,8 +1535,6 @@ MonoBehaviour:
   characters:
   - Characters/Heroes/HeroCharacter
   - Characters/Heroes/HeroCharacter
-  - Characters/Heroes/HeroCharacter
-  - Characters/Heroes/HeroCharacter
 --- !u!114 &114314815260518818
 MonoBehaviour:
   m_ObjectHideFlags: 1
