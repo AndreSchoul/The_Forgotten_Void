@@ -53,6 +53,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackName: Standard Robot Attack
   attackDescription: Even his Standard Attacks can kill the enemy easily
-  attackDamage: 80
+  attackDamage: 30
   attackCost: 3
   attackType: 0
