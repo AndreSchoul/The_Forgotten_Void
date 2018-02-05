@@ -14,7 +14,7 @@ public class ButtonController : MonoBehaviour {
 
     public GameObject fahrStuhl;
 
-    private void Awake()
+    private void Start()
     {
         startPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         pressPosition = new Vector3(transform.position.x, transform.position.y - 0.4f, 0);

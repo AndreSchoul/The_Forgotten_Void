@@ -137,7 +137,6 @@ public class PlayerController : MonoBehaviour {
             }
             // for battle
             if (other.tag == "Enemy") {
-                //isInFight = true;
                 GameObject.Find("Blende").GetComponent<BlendenController>().blenden();
                 isInFight = true;
                 GameManager.instance.gui.SetActive(true);

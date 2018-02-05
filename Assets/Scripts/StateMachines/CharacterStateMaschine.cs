@@ -227,7 +227,7 @@ public class CharacterStateMaschine : MonoBehaviour {
         stats = healthPanel.GetComponent<UnitStats_Health>();
         stats.healthBar.value = baseClass.currentHP / baseClass.baseHP;
         stats.attackPoints = baseClass.currentMP;
-        Vector3 screenPosition = Camera.main.WorldToScreenPoint(new Vector3(transform.position.x + 221.5f, transform.position.y + 14f, transform.position.z));
+        Vector3 screenPosition = Camera.main.WorldToScreenPoint(new Vector3(transform.position.x + 200, transform.position.y - 5, transform.position.z) + Camera.main.transform.position);
         healthPanel.transform.SetParent(GameObject.Find("BattleUI").transform, false);
         healthPanel.transform.position = screenPosition;
     }
@@ -251,9 +251,9 @@ public class CharacterStateMaschine : MonoBehaviour {
         // move character which attacks to its target
         Vector3 enemyPosition;
         if(this.gameObject.tag == "Hero") {
-            enemyPosition = new Vector3(enemyToAttack.transform.position.x - 2.5f, enemyToAttack.transform.position.y, enemyToAttack.transform.position.z);
+            enemyPosition = new Vector3(enemyToAttack.transform.position.x - 5, enemyToAttack.transform.position.y, enemyToAttack.transform.position.z);
         } else {
-            enemyPosition = new Vector3(enemyToAttack.transform.position.x + 2.5f, enemyToAttack.transform.position.y, enemyToAttack.transform.position.z);
+            enemyPosition = new Vector3(enemyToAttack.transform.position.x + 5, enemyToAttack.transform.position.y, enemyToAttack.transform.position.z);
         }
 
 

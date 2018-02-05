@@ -38,6 +38,8 @@ public class BattleStateMachine : MonoBehaviour {
 
     public GameObject detectedTarget;
 
+    private static bool fightStartet = true;
+
     // Use this for initialization
     void Start() {
         battleStates = PerformAction.wait;
@@ -118,7 +120,8 @@ public class BattleStateMachine : MonoBehaviour {
 
                         herosToManage[0].transform.Find("Selector").gameObject.SetActive(true);
                         heroChoice = new HandleTurns();
-                        if (Input.GetButton("Submit")) {
+                        if (Input.GetButton("Submit") || fightStartet) {
+                            fightStartet = false;
                             //attackPanel.SetActive(true);
                             if (createAttackPanelOnce) {
 
@@ -312,7 +315,7 @@ public class BattleStateMachine : MonoBehaviour {
         //JNRCharacterController.isInFight = false;
         //JNRCharacterController.hero.SetActive(true);
         PlayerController.isInFight = false;
-        
+        fightStartet = true;
         PlayerController.hero.SetActive(true);
         battleStates = PerformAction.wait;
         heroInput = HeroGUI.activate;

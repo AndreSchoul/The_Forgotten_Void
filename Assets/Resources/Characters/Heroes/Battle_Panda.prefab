@@ -1003,7 +1003,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1027,7 +1027,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
 --- !u!95 &95258643187726848
 Animator:
   serializedVersion: 3
@@ -1037,7 +1037,7 @@ Animator:
   m_GameObject: {fileID: 1572944694787422}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b12597e5a4992874cb01a31579e29d9f, type: 2}
+  m_Controller: {fileID: 22100000, guid: f69f02cb49785dd4086da8519b5f7722, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1164,18 +1164,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: 0
   baseClass:
-    name_: 
-    baseHP: 0
-    baseMP: 0
-    baseATK: 0
-    baseDEF: 0
-    currentHP: 0
-    currentMP: 0
-    currentATK: 0
-    currentDEF: 0
-    level: 0
+    name_: Battle_Panda
+    baseHP: 100
+    baseMP: 100
+    baseATK: 10
+    baseDEF: 10
+    currentHP: 100
+    currentMP: 100
+    currentATK: 10
+    currentDEF: 10
+    level: 1
     attacks: []
-    actionPointAttacks: []
+    actionPointAttacks:
+    - {fileID: 114555624955635680, guid: 8ba1610d198c3fe42a7f2ff9cdbfdf5e, type: 2}
+    - {fileID: 114942341598151222, guid: d6c9f1ef169191e40a746b30a858a170, type: 2}
     luck: 0
     stamina: 0
     agility: 0

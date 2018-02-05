@@ -1630,18 +1630,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: 0
   baseClass:
-    name_: 
-    baseHP: 0
-    baseMP: 0
-    baseATK: 0
-    baseDEF: 0
-    currentHP: 0
-    currentMP: 0
-    currentATK: 0
-    currentDEF: 0
-    level: 0
+    name_: Battle_Hero
+    baseHP: 120
+    baseMP: 100
+    baseATK: 15
+    baseDEF: 15
+    currentHP: 120
+    currentMP: 100
+    currentATK: 15
+    currentDEF: 15
+    level: 1
     attacks: []
-    actionPointAttacks: []
+    actionPointAttacks:
+    - {fileID: 114555624955635680, guid: 8ba1610d198c3fe42a7f2ff9cdbfdf5e, type: 2}
+    - {fileID: 114942341598151222, guid: d6c9f1ef169191e40a746b30a858a170, type: 2}
+    - {fileID: 114963686103359210, guid: 011c3c3f8f2152a4081e7d7aeab3dda1, type: 2}
     luck: 0
     stamina: 0
     agility: 0
@@ -2713,7 +2716,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1359724461652626}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -1.8571396, y: 5.0714264, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4370824267423492}
