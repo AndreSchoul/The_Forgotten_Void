@@ -36,12 +36,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4531304441520704}
   - component: {fileID: 70018200047767646}
-  - component: {fileID: 50194122613986008}
-  - component: {fileID: 82302082499198200}
-  - component: {fileID: 114216467043473336}
-  - component: {fileID: 114834212722446002}
+  - component: {fileID: 114018961435839218}
   m_Layer: 0
-  m_Name: JnR_Avocado
+  m_Name: Battle_GiantAvocado
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -716,7 +713,7 @@ Transform:
   m_GameObject: {fileID: 1184220547462190}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1}
   m_Children:
   - {fileID: 4782665278512212}
   - {fileID: 4751504208573630}
@@ -827,7 +824,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1978514673235510}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5, y: 6, z: 0}
+  m_LocalPosition: {x: 5, y: 4.1176467, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children:
   - {fileID: 4468290358645642}
@@ -846,8 +843,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1247285311940396}
   m_LocalRotation: {x: 0.46193978, y: -0.19134173, z: -0.19134173, w: 0.84462327}
-  m_LocalPosition: {x: 0.4, y: 12, z: 0}
-  m_LocalScale: {x: -0.5, y: 0.5, z: 0.5}
+  m_LocalPosition: {x: 0.6, y: 10, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4531304441520704}
   m_RootOrder: 0
@@ -992,26 +989,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1247285311940396}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!50 &50194122613986008
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1184220547462190}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!65 &65359540308849592
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -1036,89 +1013,9 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.6, y: 5.45}
+  m_Offset: {x: 0.5, y: 3.3}
   m_Size: {x: 6.5, y: 11}
   m_Direction: 0
---- !u!82 &82302082499198200
-AudioSource:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1184220547462190}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 9d2cdee814d00cb499916883c72fcfc8, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 0.5
-  m_Pitch: 1.75
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
 --- !u!95 &95805877623517896
 Animator:
   serializedVersion: 3
@@ -1128,7 +1025,7 @@ Animator:
   m_GameObject: {fileID: 1978514673235510}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 97dff15af56042a46b25a3836097eb74, type: 2}
+  m_Controller: {fileID: 22100000, guid: 452c3ea2fedccc343a819843b4cebf5c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1136,6 +1033,46 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114018961435839218
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1184220547462190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4099e0eae25ce9447876dfe1cff7bd79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentState: 0
+  baseClass:
+    name_: Battle_GiantAvocado
+    baseHP: 1000
+    baseMP: 1000
+    baseATK: 10
+    baseDEF: 10
+    currentHP: 1000
+    currentMP: 1000
+    currentATK: 10
+    currentDEF: 10
+    level: 3
+    attacks:
+    - {fileID: 114942341598151222, guid: 1423403f6935e0f42a8d61fab06b35e7, type: 2}
+    actionPointAttacks:
+    - {fileID: 114942341598151222, guid: 228bc6dc6045bd94ea4f84438baa4ca9, type: 2}
+    luck: 0
+    stamina: 0
+    agility: 0
+    dexterity: 0
+    intelligence: 0
+    criticalHitChance: 0
+  selector: {fileID: 1247285311940396}
+  healthPanel: {fileID: 1775946767262744, guid: 101805c06edc0d846a6630d49eb41515,
+    type: 2}
+  heroToAttack: {fileID: 0}
+  enemyToAttack: {fileID: 0}
+  heroStats: {fileID: 0}
+  enemyNumber: 0
 --- !u!114 &114055030504162628
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1185,7 +1122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SpriteMesh: {fileID: 11400000, guid: a446670e19332524485ab84a38a2f891, type: 2}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.63365054, b: 0.43382353, a: 1}
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_SortingLayerID: 719874441
@@ -1280,20 +1217,6 @@ MonoBehaviour:
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4736363264708066}
   m_AttachedIK: {fileID: 0}
---- !u!114 &114216467043473336
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1184220547462190}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b00cf0a956a1f1145a3eb0639a5c1d81, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characters:
-  - Characters/Enemies/Battle_Avocado
-  - Characters/Enemies/Battle_Avocado
 --- !u!114 &114221586183242976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1426,7 +1349,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SpriteMesh: {fileID: 11400000, guid: a446670e19332524485ab84a38a2f891, type: 2}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.63365054, b: 0.43382353, a: 1}
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_SortingLayerID: 719874441
@@ -1567,7 +1490,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SpriteMesh: {fileID: 11400000, guid: 89417f1e533031649af8734f8b06b425, type: 2}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.63365054, b: 0.43382353, a: 1}
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_SortingLayerID: 719874441
@@ -1589,7 +1512,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SpriteMesh: {fileID: 11400000, guid: 37e1d4f92943de04db886a295a25790b, type: 2}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.63365054, b: 0.43382353, a: 1}
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_SortingLayerID: 719874441
@@ -1713,23 +1636,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 2.0000508
+  m_Length: 2.0000503
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4424376136083054}
   m_AttachedIK: {fileID: 0}
---- !u!114 &114834212722446002
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1184220547462190}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8f57facae9ebe040b78c21f3316ecc1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1
-  isLookingRight: 0
 --- !u!114 &114850438730940818
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1758,7 +1668,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 2.3500004
+  m_Length: 2.3500006
   m_Child: {fileID: 0}
   m_ChildTransform: {fileID: 4838207569793758}
   m_AttachedIK: {fileID: 0}
@@ -1774,7 +1684,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SpriteMesh: {fileID: 11400000, guid: 37e1d4f92943de04db886a295a25790b, type: 2}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.63365054, b: 0.43382353, a: 1}
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_SortingLayerID: 719874441

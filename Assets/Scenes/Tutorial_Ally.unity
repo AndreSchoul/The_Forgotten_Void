@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -88,6 +88,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaDirect: 0.5
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
+    m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -1396,7 +1397,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 46.8945
+  orthographic size: 27.074
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1407,6 +1408,7 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -3032,7 +3034,7 @@ MonoBehaviour:
   - color: {r: 0, g: 0.39215687, b: 0, a: 1}
     prefab: {fileID: 1449680747875930, guid: 6158ad3393c1ec44f908936919e2ca5c, type: 2}
   - color: {r: 0.39215687, g: 0, b: 0.26666668, a: 1}
-    prefab: {fileID: 1630846026906802, guid: e4684d51cfe281342bf23ea4e220e753, type: 2}
+    prefab: {fileID: 1630846026906802, guid: 70a5dc10f0c35964480b773cb9a14150, type: 2}
   - color: {r: 0.13725491, g: 0, b: 0.39215687, a: 1}
     prefab: {fileID: 1184220547462190, guid: bd39b5583db02544b92e6a4816f20d4c, type: 2}
   - color: {r: 0, g: 0.16470589, b: 0.39215687, a: 1}

@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 23b9dd3839d40c146852f1099b38367d
-timeCreated: 1518033588
+guid: 6461bc4378106214e86cfe92bb4422e9
+timeCreated: 1511129628
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -79,7 +79,6 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
-    androidETC2FallbackOverride: 0
   - buildTarget: Standalone
     maxTextureSize: 1024
     resizeAlgorithm: 0
@@ -89,7 +88,6 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
-    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -102,7 +100,7 @@ TextureImporter:
         width: 394
         height: 374
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -172,7 +170,7 @@ TextureImporter:
         width: 385
         height: 385
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -210,7 +208,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1450
-        y: 1153
+        y: 1145
         width: 394
         height: 341
       alignment: 9
