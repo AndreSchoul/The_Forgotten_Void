@@ -1,0 +1,93 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1928653603392228}
+  m_IsPrefabParent: 1
+--- !u!1 &1928653603392228
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4522667716351992}
+  - component: {fileID: 114164939005264036}
+  m_Layer: 0
+  m_Name: LevelGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4522667716351992
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1928653603392228}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114164939005264036
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1928653603392228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58ccb77f17e94264cbeef5d580a336e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  map: {fileID: 2800000, guid: 9c76b5319ce3c1149b7313745299234d, type: 3}
+  colorMappings:
+  - color: {r: 0, g: 0, b: 0, a: 1}
+    prefab: {fileID: 1348818757357614, guid: 0d0a53b2ef6987a4190a8ac7353be747, type: 2}
+  - color: {r: 0.21568628, g: 0.21568628, b: 0.21568628, a: 1}
+    prefab: {fileID: 1610170817060042, guid: deae13e692ade8e458ce7dad454b1e42, type: 2}
+  - color: {r: 0.09803922, g: 0.09803922, b: 0.09803922, a: 1}
+    prefab: {fileID: 1280459512329542, guid: f803fe4507b6cf7479d37cfc7565b9aa, type: 2}
+  - color: {r: 0.29411766, g: 0.29411766, b: 0.29411766, a: 1}
+    prefab: {fileID: 1296852020215698, guid: 8b3771cd5a20faa47afb93e0a93fef88, type: 2}
+  - color: {r: 0.39215687, g: 0.39215687, b: 0.39215687, a: 1}
+    prefab: {fileID: 1740926121957394, guid: 68b722df7aa2231498cda2e185d5839e, type: 2}
+  - color: {r: 0.49019608, g: 0.49019608, b: 0.49019608, a: 1}
+    prefab: {fileID: 1266187185369264, guid: ffa9453b050279640906ab67aaa72587, type: 2}
+  - color: {r: 0, g: 0, b: 1, a: 1}
+    prefab: {fileID: 1070123219615004, guid: cb4218f16e3e1e342ae1ec6e8d748f1e, type: 2}
+  - color: {r: 1, g: 1, b: 0, a: 1}
+    prefab: {fileID: 1042408416048260, guid: 4adff5e3dc5c210478e40cc1db6c2c06, type: 2}
+  - color: {r: 1, g: 0.60784316, b: 0, a: 1}
+    prefab: {fileID: 1528368477455012, guid: 3509ff10866b9504890c837c7d84edf5, type: 2}
+  - color: {r: 1, g: 0, b: 0, a: 1}
+    prefab: {fileID: 1118572543485268, guid: 02c3f51d7b69814439a9cf0b353a5783, type: 2}
+  - color: {r: 0.7058824, g: 0.7058824, b: 0, a: 1}
+    prefab: {fileID: 1252109131556702, guid: c976e9be32452144aa58a4b196a3cd16, type: 2}
+  - color: {r: 0, g: 1, b: 0, a: 1}
+    prefab: {fileID: 1624896072515244, guid: 003b8e6b2c49f3e46bc82bb83008e8dc, type: 2}
+  - color: {r: 0.5686275, g: 0, b: 0, a: 1}
+    prefab: {fileID: 1866749479565132, guid: 22f9fb2f0f110014fb53229c5f802cf3, type: 2}
+  - color: {r: 0, g: 0.39215687, b: 0.39215687, a: 1}
+    prefab: {fileID: 1781260934221016, guid: a0cd7a3f5b5c5b74e976755392360747, type: 2}
+  - color: {r: 0, g: 0.39215687, b: 0, a: 1}
+    prefab: {fileID: 1449680747875930, guid: 6158ad3393c1ec44f908936919e2ca5c, type: 2}
+  - color: {r: 0.39215687, g: 0, b: 0.26666668, a: 1}
+    prefab: {fileID: 1630846026906802, guid: e4684d51cfe281342bf23ea4e220e753, type: 2}
+  - color: {r: 0.13725491, g: 0, b: 0.39215687, a: 1}
+    prefab: {fileID: 1184220547462190, guid: bd39b5583db02544b92e6a4816f20d4c, type: 2}
+  - color: {r: 0, g: 0.16470589, b: 0.39215687, a: 1}
+    prefab: {fileID: 1547044198744190, guid: dc7b415d9dbb7814984387cd64127367, type: 2}
+  - color: {r: 0, g: 0.43529412, b: 0.43529412, a: 1}
+    prefab: {fileID: 1997331261482096, guid: ca2df98c242179342a10cd7d7be06483, type: 2}
