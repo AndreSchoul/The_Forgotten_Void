@@ -5,7 +5,7 @@ AnimatorOverrideController:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: AOC-Robot
+  m_Name: BattleAOC-Robot
   m_Controller: {fileID: 9100000, guid: 6343c7399a559174c8709bac32a601a8, type: 2}
   m_Clips:
   - m_OriginalClip: {fileID: 7400000, guid: f0d80f916a6816d45b955d59f95a4765, type: 2}

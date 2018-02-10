@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour {
     }
 
     public void LoadNextScene(string sceneToLoad) {
-        SceneManager.LoadScene(sceneToLoad); 
+        SceneManager.LoadScene(sceneToLoad);
     }
 
     public void LoadSceneAfterBattle() {
