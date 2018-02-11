@@ -53,6 +53,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackName: Triple Hit
   attackDescription: A powerful attack which hits three times
-  attackDamage: 50
+  attackDamage: 35
   attackCost: 3
   attackType: 0
