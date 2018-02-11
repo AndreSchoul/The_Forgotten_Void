@@ -54,5 +54,5 @@ MonoBehaviour:
   attackName: Standard Robot Attack
   attackDescription: Even his Standard Attacks can kill the enemy easily
   attackDamage: 30
-  attackCost: 3
+  attackCost: 2
   attackType: 0
