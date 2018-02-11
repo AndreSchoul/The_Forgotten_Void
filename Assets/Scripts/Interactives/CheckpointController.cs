@@ -11,7 +11,7 @@ public class CheckpointController : MonoBehaviour {
         if (!isChecked && collision.tag == "Hero")
         {            
             isChecked = true;
-            collision.GetComponent<PlayerController>().setRespawnPosition(transform.position);
+            collision.GetComponent<PlayerController>().SetRespawnPosition(transform.position);
             while(transform.rotation.x > 0.7)
             {
                 transform.Rotate(-0.1f, 0, 0);

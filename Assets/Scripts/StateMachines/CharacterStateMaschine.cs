@@ -39,12 +39,19 @@ public class CharacterStateMaschine : MonoBehaviour {
     private bool actionStarted = false; 
     private static bool herosDoOnce = true;
     private static bool enemiesDoOnce = false;
+    private AudioManager audioManager;
+
+    private bool isAlive = true;
 
     private GameObject cam;
     private bool doWait = true;
 
     public static int lastEnemey = 0;
     public int enemyNumber = 0;
+
+
+
+    private bool rotateOnce = true;
 
     // Use this for initialization
     void Start () {
@@ -68,6 +75,8 @@ public class CharacterStateMaschine : MonoBehaviour {
 
             if(this.gameObject.tag == "Hero") CreateHeroPanel();
         }
+
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
     }
 
     // Update is called once per frame
@@ -76,10 +85,11 @@ public class CharacterStateMaschine : MonoBehaviour {
             case (TurnState.wait):
                 //if (JNRCharacterController.isInFight) {
                 if (PlayerController.isInFight) {
-                    animator.SetFloat("x", 0);
+    //                animator.SetFloat("x", 0);
                     animator.SetBool("isWalking", false);
                     animator.SetBool("isIdling", true);
                     animator.SetBool("isAttacking", false);
+                    animator.SetBool("isDead", false);
 
                     if (!bsm.herosToManage.Contains(this.gameObject) && this.gameObject.tag == "Hero") {
                         bsm.herosToManage.Add(this.gameObject);
@@ -95,10 +105,11 @@ public class CharacterStateMaschine : MonoBehaviour {
                 break;
             case (TurnState.action):
 
-                animator.SetFloat("x", 0);
+     //           animator.SetFloat("x", 0);
                 animator.SetBool("isWalking", true);
                 animator.SetBool("isIdling", false);
                 animator.SetBool("isAttacking", false);
+                animator.SetBool("isDead", false);
 
                 StartCoroutine(TimeForAction());
                 break;
@@ -107,7 +118,7 @@ public class CharacterStateMaschine : MonoBehaviour {
                 animator.SetBool("isWalking", false);
                 animator.SetBool("isIdling", false);
                 animator.SetBool("isAttacking", true);
-
+                animator.SetBool("isDead", false);
                 break;
             case (TurnState.turnOver):
                 if (doOnce && this.gameObject.tag == "Hero" && herosTurnOver < bsm.herosInBattle.Count) {
@@ -161,6 +172,7 @@ public class CharacterStateMaschine : MonoBehaviour {
                     // not attackable anymore
                     bsm.enemiesInBattle.Remove(this.gameObject);
                 }
+                audioManager.PlaySound("death");
                 // disable selector
                 selector.SetActive(false);
                 // remove item from perfomList
@@ -175,16 +187,28 @@ public class CharacterStateMaschine : MonoBehaviour {
                 //bsm.heroInput = BattleStateMachine.HeroGUI.activate;
                 bsm.battleStates = BattleStateMachine.PerformAction.checkAlive;
                 alive = false;
-                Destroy(this.gameObject);
+
+
+                //Destroy(this.gameObject);
+                if (isAlive) {
+                    animator.SetBool("isDead", true);
+                    StartCoroutine(Wait(1f));
+                    isAlive = false;
+                }
                 Destroy(healthPanel);
                 break;
         }
     }
 
-    /// <summary>
-    /// Lets the enemy choose a skill and a target to use on.
-    /// </summary>
-    private void ChooseAction() {
+    IEnumerator Wait(float time) {
+        yield return new WaitForSecondsRealtime(time);
+        animator.SetBool("isDead", false);
+    }
+
+        /// <summary>
+        /// Lets the enemy choose a skill and a target to use on.
+        /// </summary>
+        private void ChooseAction() {
         if (bsm.herosInBattle.Count > 0) {
             HandleTurns chosenAction = new HandleTurns();
             chosenAction.type = "Enemy";
@@ -217,6 +241,11 @@ public class CharacterStateMaschine : MonoBehaviour {
         float calculated_Dmg = baseClass.currentATK + bsm.performList[0].chosenAttack.attackDamage +
         (baseClass.currentATK + bsm.performList[0].chosenAttack.attackDamage) * (baseClass.level / 100f * 3f);
         enemyToAttack.GetComponent<CharacterStateMaschine>().TakeDmg(calculated_Dmg);
+
+
+
+        audioManager.PlaySound("hit");
+        //enemyToAttack.GetComponent<AudioSource>().PlayOneShot();
     }
 
     /// <summary>
@@ -269,13 +298,26 @@ public class CharacterStateMaschine : MonoBehaviour {
 
         while (MoveTowardsEnemy(enemyPosition)) { yield return null; }
         currentState = TurnState.attack;
+        /*
         AudioSource audio = GetComponent<AudioSource>();
         audio.Play();
+        */
+        AudioManager audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        audioManager.PlaySound("attack");
+
+
         // wait for the duration of the attack animation
-        yield return new WaitForSeconds(0.4f);
-        currentState = TurnState.action;
+        yield return new WaitForSeconds(0.15f);
+    //    yield return new WaitForSeconds(animator.GetCurrentAnimatorClipInfo(0).Length);
+        //    yield return new WaitForSeconds(0.4f);
+ //       currentState = TurnState.action;
         // do dmg 
         DoDmg();
+        yield return new WaitForSeconds(animator.GetCurrentAnimatorClipInfo(0).Length - 0.5f);
+
+        //     yield return new WaitForSeconds(0.4f);
+
+        currentState = TurnState.action;
         // move character back to start position
         Vector3 firstPosition = startposition;
 
@@ -288,7 +330,8 @@ public class CharacterStateMaschine : MonoBehaviour {
 
 
         while (MoveTowardsStart(firstPosition)) { yield return null; }
-
+        if (!rotateOnce) transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
+        rotateOnce = true;
 
         if (this.gameObject.tag == "Enemy") {
             if (enemyNumber == lastEnemey) bsm.createAttackPanelOnce = true;
@@ -333,7 +376,9 @@ public class CharacterStateMaschine : MonoBehaviour {
     /// </summary>
     /// <param name = "target">Characters location to move to</param>
     private bool MoveTowardsStart(Vector3 target) {
-        animator.SetFloat("x", 1);
+    //    animator.SetFloat("x", 1);
+        if(rotateOnce) transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
+        rotateOnce = false;
         return target != (transform.position = Vector3.MoveTowards(transform.position, target, animationSpeed * Time.deltaTime));
     }
 
@@ -378,12 +423,12 @@ public class CharacterStateMaschine : MonoBehaviour {
         }
         //Debug.Log(cam.transform.eulerAngles.y);
     }
-
+    /*
     IEnumerator Wait() {
         Debug.Log("Wait 10 seconds");
         yield return new WaitForSeconds(10);
         Debug.Log("okay");
         currentState = TurnState.wait;
         doWait = true;
-    }
+    }*/
 }

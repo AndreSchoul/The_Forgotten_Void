@@ -39,6 +39,7 @@ public class PlayerController : MonoBehaviour {
     private RaycastHit2D playerHit;
     private RaycastHit2D objectHit;
     private Vector2 spawnPositionJNR;
+    private AudioManager audioManager;
 
     private void Awake() {
         rb2d = GetComponent<Rigidbody2D>();
@@ -50,6 +51,8 @@ public class PlayerController : MonoBehaviour {
         audio_JnR = this.GetComponent<AudioSource>();
         audio_JnR.Play();
         spawnPositionJNR = new Vector2(transform.position.x, transform.position.y);
+
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
     }
 
     private void Update() {
@@ -74,6 +77,9 @@ public class PlayerController : MonoBehaviour {
         isGrounded = Physics2D.OverlapCircle(groundDetector.position, 1F, whatIsGrounded);
         if (isGrounded && Input.GetButtonDown("Jump")) {
             rb2d.velocity = Vector2.up * jumpVelocity;
+
+            audioManager.PlaySound("jump");
+
             animationStance = AnimationStance.jumpUp;
         }
         if (rb2d.velocity.y > 0 && !Input.GetButton("Jump")) {
@@ -104,6 +110,11 @@ public class PlayerController : MonoBehaviour {
             animationStance = AnimationStance.idle;
         } else {
             transform.Translate(Vector3.right * Time.deltaTime * movementSpeed);
+
+
+            audioManager.PlaySound("walk");
+
+
             walkTime += Time.deltaTime;
             if (walkTime > 1f) movementSpeed += 0.085f;
             else movementSpeed = minMovementSpeed;
@@ -148,18 +159,21 @@ public class PlayerController : MonoBehaviour {
                 this.gameObject.SetActive(false);
                 other.gameObject.SetActive(false);
                 GameManager.instance.collidedEnemy = other.gameObject;
-                GameManager.PlayMusic(bsm.GetComponent<AudioSource>());
+
+                if (other.gameObject.name == "JnR_Robot(Clone)") {
+                    AudioClip audio = (AudioClip)Resources.Load("Audio/Music/Battle_Boss_Loop");
+                    bsm.GetComponent<AudioSource>().clip = audio;
+                    GameManager.PlayMusic(bsm.GetComponent<AudioSource>());
+                } else GameManager.PlayMusic(bsm.GetComponent<AudioSource>());
             }
         }
     }
 
-    public void respawn()
-    {
+    public void Respawn() {
         transform.position = spawnPositionJNR;
     }
 
-    public void setRespawnPosition(Vector3 spawnPoint)
-    {
+    public void SetRespawnPosition(Vector3 spawnPoint) {
         spawnPositionJNR = spawnPoint;
     }
 }

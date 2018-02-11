@@ -1,5 +1,6 @@
 ﻿// Author: André Schoul
 
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -31,14 +32,27 @@ public class BattleStateMachine : MonoBehaviour {
     public GameObject actionButton;
     public Transform actionSpacer;
 
-    private HeroGUI heroInput;
-    private List<GameObject> actionButtons = new List<GameObject>();
-    private  HandleTurns heroChoice;
+    public HeroGUI heroInput;
+    public List<GameObject> actionButtons = new List<GameObject>();
+    private HandleTurns heroChoice;
     public bool createAttackPanelOnce = true;
 
     public GameObject detectedTarget;
 
     private static bool fightStartet = true;
+
+    private bool setFirstEnemy = true;
+
+
+    private bool fightWasBoss = false;
+    private bool fightOver = true;
+
+    private GameObject battleBox;
+
+    public static bool selectEnemy = false;
+    private bool ColorUp = true;
+    public static int buttonNumber;
+    public static BaseAttack selectedAttack;
 
     // Use this for initialization
     void Start() {
@@ -46,13 +60,27 @@ public class BattleStateMachine : MonoBehaviour {
         heroInput = HeroGUI.activate;
         attackPanel.SetActive(false);
         heroStats.SetActive(false);
+
+        battleBox = new GameObject();
+        battleBox.name = "BattleBox";
+
+        buttonNumber = 0;
     }
 
     // Update is called once per frame
     void Update() {
         //if (JNRCharacterController.isInFight) {
         if (PlayerController.isInFight) {
-                switch (battleStates) {
+            Debug.Log("buttonNumber: " + buttonNumber);
+            //Debug.Log("actionbuttons: " + actionButtons.Count);
+            if (setFirstEnemy) {
+
+                if (UnitSelection.detectedEnemy.name == "Battle_Robot_1") fightWasBoss = true;
+
+                detectedTarget = enemiesInBattle[0];
+                setFirstEnemy = false;
+            }
+            switch (battleStates) {
                 case (PerformAction.wait):
                     if (performList.Count > 0) {
                         battleStates = PerformAction.takeAction;
@@ -120,7 +148,8 @@ public class BattleStateMachine : MonoBehaviour {
 
                         herosToManage[0].transform.Find("Selector").gameObject.SetActive(true);
                         heroChoice = new HandleTurns();
-                        if (Input.GetButton("Submit") || fightStartet) {
+          //              if (Input.GetButton("Submit") || fightStartet) {
+                        if(!CharacterStateMaschine.isEnemiesTurn) { 
                             fightStartet = false;
                             //attackPanel.SetActive(true);
                             if (createAttackPanelOnce) {
@@ -138,6 +167,18 @@ public class BattleStateMachine : MonoBehaviour {
                             // heroInput = HeroGUI.wait;
                         }
                     }
+
+
+
+                    /*
+                    if (Input.GetButton("Submit") && selectEnemy) {
+                        BattleStateMachine.selectEnemy = false;
+                        ActionToPerform(BattleStateMachine.selectedAttack);
+                    }*/
+
+
+
+
                     break;
                 case (HeroGUI.wait):
                     // idle
@@ -146,6 +187,10 @@ public class BattleStateMachine : MonoBehaviour {
                     HeroInputDone();
                     break;
             }
+
+
+
+            SwitchActionButtons();
         }
     }
 
@@ -167,9 +212,12 @@ public class BattleStateMachine : MonoBehaviour {
         heroChoice.type = "Hero";
         heroChoice.chosenAttack = atk;
         // check if an enemy is selected
-        if (UnitSelection.detectedEnemy == null || UnitSelection.setEnemySelection == false) {
+        if (UnitSelection.detectedEnemy == null /*|| UnitSelection.setEnemySelection == false*/) {
             Debug.Log("Select an enemy to attack!");
             heroInput = HeroGUI.activate;
+
+
+
         } else {
             attackPanel.SetActive(false);
             SelectedTarget(UnitSelection.detectedEnemy);
@@ -193,19 +241,23 @@ public class BattleStateMachine : MonoBehaviour {
     /// Adds "heroChoice" to the performList, clears attack panels, deselects active selector, removes hero from "herosToManage" list and changes heroInput state to "activate".
     /// </summary>
     private void HeroInputDone() {
-        performList.Add(heroChoice);    
+        performList.Add(heroChoice);
         ClearAttackPanels();
         herosToManage[0].transform.Find("Selector").gameObject.SetActive(false);
         herosToManage[0].GetComponent<CharacterStateMaschine>().ToggleVisibilityHeroStats(false);
         herosToManage.RemoveAt(0);
-        heroInput = HeroGUI.activate;     
+        heroInput = HeroGUI.activate;
+
+
+        selectedAttack = null;
+        buttonNumber = 0;
     }
 
     /// <summary>
     /// Clears attack panels and corresponding buttons.
     /// </summary>
     private void ClearAttackPanels() {
-        UnitSelection.DetectTarget();
+        //      UnitSelection.DetectTarget();
         UnitSelection.detectedEnemy = null;
         if (UnitSelection.enemySelector != null) {
             UnitSelection.enemySelector.SetActive(false);
@@ -219,7 +271,7 @@ public class BattleStateMachine : MonoBehaviour {
     /// <summary>
     /// Creates one button for each character's available attack.
     /// </summary>
-    public void CreateActionButton() {    
+    public void CreateActionButton() {
         foreach (BaseAttack action in herosToManage[0].GetComponent<CharacterStateMaschine>().baseClass.actionPointAttacks) {
             GameObject actionButton_ = Instantiate(actionButton) as GameObject;
             Text actionButtonText_ = actionButton_.transform.Find("Text").GetComponent<Text>();
@@ -228,7 +280,7 @@ public class BattleStateMachine : MonoBehaviour {
             actionBtn.attackToPerform = action;
             actionButton_.transform.SetParent(actionSpacer, false);
             actionButtons.Add(actionButton_);
-            if (action.name == "Attack_Standard")  actionButton_.GetComponent<Button>().image.sprite = Resources.Load<Sprite>("GUI/normal-attack-icon");
+            if (action.name == "Attack_Standard") actionButton_.GetComponent<Button>().image.sprite = Resources.Load<Sprite>("GUI/normal-attack-icon");
             if (action.name == "Attack_TripleHit") actionButton_.GetComponent<Button>().image.sprite = Resources.Load<Sprite>("GUI/double-attack-icon");
             if (action.name == "Blaster") actionButton_.GetComponent<Button>().image.sprite = Resources.Load<Sprite>("GUI/weapon-attack-icon");
             actionButton_.GetComponent<Button>().onClick.AddListener(() => ActionToPerform(action));
@@ -243,6 +295,8 @@ public class BattleStateMachine : MonoBehaviour {
     /// <param name ="spawnpoints">Spawnpoint of each particular character (Spawnpoints attached to camera)</param>
     /// <param name ="isHero"><para>True - character is a hero</para><para>False - character is an enemy</para></param>
     public void SpawnCharacters(int characterCount, List<string> charactersFolderLocation, List<Transform> spawnpoints, bool isHero) {
+
+
         if (characterCount < 1) characterCount = 1;
         if (characterCount > 4) characterCount = 4;
         GameObject newCharacter = null;
@@ -270,6 +324,7 @@ public class BattleStateMachine : MonoBehaviour {
                 newCharacter.GetComponent<CharacterStateMaschine>().enemyNumber = i;
                 if (newCharacter.GetComponent<CharacterStateMaschine>().enemyNumber > CharacterStateMaschine.lastEnemey) CharacterStateMaschine.lastEnemey = newCharacter.GetComponent<CharacterStateMaschine>().enemyNumber;
             }
+            newCharacter.transform.SetParent(battleBox.transform);
         }
     }
 
@@ -279,54 +334,201 @@ public class BattleStateMachine : MonoBehaviour {
     /// <param name = "won"><para>True - Hero(s) won the game</para><para>False - Enemies won the game</para></param>
     public void ResetAfterBattle(bool won) {
         //JNRCharacterController.isInFight = false;
-        PlayerController.isInFight = false;
-        AudioSource audio = GetComponent<AudioSource>();
-        audio.Pause();
-        audio.time = 0;
-        if (won) {
-            Debug.Log("You won the battle!");
-            Destroy(GameManager.instance.collidedEnemy);
-            
-        } else {
-            Debug.Log("You lost the battle!");
-            // TODO send player back to start/checkpoint/space station or alike
+        StartCoroutine(Wait(2f, won));
+        /*     PlayerController.isInFight = false;
+             AudioSource audio = GetComponent<AudioSource>();
+             audio.Pause();
+             audio.time = 0;
+             if (won) {
+                 Debug.Log("You won the battle!");
+                 Destroy(GameManager.instance.collidedEnemy);
+
+             } else {
+                 Debug.Log("You lost the battle!");
+                 // TODO send player back to start/checkpoint/space station or alike
+             }
+             foreach (GameObject go in herosInBattle) {
+                 Destroy(go);
+                 Destroy(go.GetComponent<CharacterStateMaschine>().healthPanel);
+                 Destroy(go.GetComponent<CharacterStateMaschine>().heroStats);
+             }
+             CharacterStateMaschine.enemiesFinishedTurn = 0;
+             CharacterStateMaschine.enemiesTurnOver = 0;
+             CharacterStateMaschine.herosTurnOver = 0;
+             CharacterStateMaschine.isEnemiesTurn = false;
+             CharacterStateMaschine.lastEnemey = 0;
+             createAttackPanelOnce = true;
+             herosInBattle.Clear();
+             foreach (GameObject go in enemiesInBattle) {
+                 Destroy(go);
+             }
+             enemiesInBattle.Clear();
+             foreach (GameObject go in herosToManage) {
+                 Destroy(go);
+             }
+             herosToManage.Clear();
+             performList.Clear();
+             //JNRCharacterController.isInFight = false;
+             //JNRCharacterController.hero.SetActive(true);
+             PlayerController.isInFight = false;
+             fightStartet = true;
+             PlayerController.hero.SetActive(true);
+             battleStates = PerformAction.wait;
+             heroInput = HeroGUI.activate;
+             GameManager.instance.gui.SetActive(false);
+
+             GameObject cam = GameObject.Find("Main Camera");
+             Quaternion rot = cam.transform.rotation;
+             rot.y = 0f;
+             cam.transform.rotation = rot;
+
+             //GameManager.PlayMusic(JNRCharacterController.audio_JnR);
+             GameManager.PlayMusic(PlayerController.audio_JnR);
+
+             setFirstEnemy = true;
+
+             foreach(GameObject go in enemiesInBattle) {
+                 Destroy(go);
+             }*/
+
+
+        foreach (GameObject go in enemiesInBattle) {
+            Debug.Log(go.name);
+            Destroy(go);
+            Destroy(go.GetComponent<CharacterStateMaschine>().healthPanel);
         }
         foreach (GameObject go in herosInBattle) {
-            Destroy(go);
+            // Destroy(go);
             Destroy(go.GetComponent<CharacterStateMaschine>().healthPanel);
             Destroy(go.GetComponent<CharacterStateMaschine>().heroStats);
         }
-        CharacterStateMaschine.enemiesFinishedTurn = 0;
-        CharacterStateMaschine.enemiesTurnOver = 0;
-        CharacterStateMaschine.herosTurnOver = 0;
-        CharacterStateMaschine.isEnemiesTurn = false;
-        CharacterStateMaschine.lastEnemey = 0;
-        createAttackPanelOnce = true;
-        herosInBattle.Clear();
-        foreach (GameObject go in enemiesInBattle) {
-            Destroy(go);
-        }
         enemiesInBattle.Clear();
-        foreach (GameObject go in herosToManage) {
-            Destroy(go);
-        }
-        herosToManage.Clear();
-        performList.Clear();
-        //JNRCharacterController.isInFight = false;
-        //JNRCharacterController.hero.SetActive(true);
-        PlayerController.isInFight = false;
-        fightStartet = true;
-        PlayerController.hero.SetActive(true);
-        battleStates = PerformAction.wait;
-        heroInput = HeroGUI.activate;
-        GameManager.instance.gui.SetActive(false);
+        /*
+        AudioSource audio = GetComponent<AudioSource>();
+        audio.Pause();
+        audio.time = 0;
+        GameManager.PlayMusic(PlayerController.audio_JnR);      */
+    }
 
-        GameObject cam = GameObject.Find("Main Camera");
-        Quaternion rot = cam.transform.rotation;
-        rot.y = 0f;
-        cam.transform.rotation = rot;
+    IEnumerator Wait(float time, bool won) {
 
-        //GameManager.PlayMusic(JNRCharacterController.audio_JnR);
+        if (fightOver) {
+            fightOver = false;
+
+            GameObject.Find("Blende").GetComponent<BlendenController>().blenden();
+            /*
+            PlayerController.hero.SetActive(true);
+            */
+            AudioSource audio = GetComponent<AudioSource>();
+            audio.Pause();
+            audio.time = 0;/*
         GameManager.PlayMusic(PlayerController.audio_JnR);
+        */
+            yield return new WaitForSeconds(time);
+
+            PlayerController.isInFight = false;
+            /*      AudioSource audio = GetComponent<AudioSource>();
+                  audio.Pause();
+                  audio.time = 0;     */
+            if (won) {
+                Debug.Log("You won the battle!");
+                Destroy(GameManager.instance.collidedEnemy);
+
+            } else {
+                Debug.Log("You lost the battle!");
+                // TODO send player back to start/checkpoint/space station or alike
+            }
+            foreach (GameObject go in herosInBattle) {
+                Destroy(go);
+                //           Destroy(go.GetComponent<CharacterStateMaschine>().healthPanel);
+                //           Destroy(go.GetComponent<CharacterStateMaschine>().heroStats);
+            }
+            CharacterStateMaschine.enemiesFinishedTurn = 0;
+            CharacterStateMaschine.enemiesTurnOver = 0;
+            CharacterStateMaschine.herosTurnOver = 0;
+            CharacterStateMaschine.isEnemiesTurn = false;
+            CharacterStateMaschine.lastEnemey = 0;
+            createAttackPanelOnce = true;
+            herosInBattle.Clear();
+            foreach (GameObject go in enemiesInBattle) {
+                Destroy(go);
+            }
+            enemiesInBattle.Clear();
+            foreach (GameObject go in herosToManage) {
+                Destroy(go);
+            }
+            herosToManage.Clear();
+            performList.Clear();
+            //JNRCharacterController.isInFight = false;
+            //JNRCharacterController.hero.SetActive(true);
+            PlayerController.isInFight = false;
+            fightStartet = true;
+            //      PlayerController.hero.SetActive(true);
+            battleStates = PerformAction.wait;
+            heroInput = HeroGUI.activate;
+            GameManager.instance.gui.SetActive(false);
+
+            GameObject cam = GameObject.Find("Main Camera");
+            Quaternion rot = cam.transform.rotation;
+            rot.y = 0f;
+            cam.transform.rotation = rot;
+
+            //GameManager.PlayMusic(JNRCharacterController.audio_JnR);
+
+
+            setFirstEnemy = true;
+
+            PlayerController.hero.SetActive(true);
+            //      AudioSource audio = GetComponent<AudioSource>();
+            audio.Pause();
+            audio.time = 0;
+            GameManager.PlayMusic(PlayerController.audio_JnR);
+
+
+            if (fightWasBoss) {
+                GameManager gm = GameObject.Find("Game Manager").GetComponent<GameManager>();
+                gm.LoadNextScene("Spacestation");
+            }
+
+            foreach (Transform go in battleBox.transform) {
+                Destroy(go.gameObject);
+            }
+
+            fightOver = true;
+        }
+    }
+
+    private void SwitchActionButtons() {
+        if (actionButtons.Count != 0) {
+            if (!selectEnemy) {
+                ColorBlock color = actionButtons[buttonNumber].GetComponent<Button>().colors;
+                if (color.colorMultiplier <= 3f && ColorUp) color.colorMultiplier += 0.05f;
+                else ColorUp = false;
+                if (color.colorMultiplier >= 1 && !ColorUp) color.colorMultiplier -= 0.05f;
+                else ColorUp = true;
+                actionButtons[buttonNumber].GetComponent<Button>().colors = color;
+
+                for (int i = 0; i < actionButtons.Count; i++) {
+                    if (i != buttonNumber) {
+                        ColorBlock currentColor = actionButtons[i].GetComponent<Button>().colors;
+                        currentColor.colorMultiplier = 1;
+                        actionButtons[i].GetComponent<Button>().colors = currentColor;
+                    }
+                }
+            }
+            if (Input.GetButton("Submit") && !selectEnemy) {
+                StartCoroutine(WaitAfterInput());/*
+                selectEnemy = true;
+                selectedAttack = actionButtons[buttonNumber].GetComponent<ActionButton>().attackToPerform;
+                Debug.Log(selectedAttack.name);*/
+            }
+        }
+    }
+
+    private IEnumerator WaitAfterInput() {
+        yield return new WaitForSeconds(1);
+        selectEnemy = true;
+        selectedAttack = actionButtons[buttonNumber].GetComponent<ActionButton>().attackToPerform;
+        Debug.Log(selectedAttack.name);
     }
 }
