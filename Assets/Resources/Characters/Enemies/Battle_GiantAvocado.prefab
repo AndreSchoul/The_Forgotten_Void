@@ -1287,12 +1287,12 @@ MonoBehaviour:
   currentState: 0
   baseClass:
     name_: Battle_GiantAvocado
-    baseHP: 1000
-    baseMP: 1000
+    baseHP: 450
+    baseMP: 500
     baseATK: 10
     baseDEF: 10
-    currentHP: 1000
-    currentMP: 1000
+    currentHP: 450
+    currentMP: 500
     currentATK: 10
     currentDEF: 10
     level: 3

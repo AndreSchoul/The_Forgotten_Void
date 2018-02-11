@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 114341421780515032}
   - component: {fileID: 82526590307557290}
   m_Layer: 0
-  m_Name: Battle_Hero
+  m_Name: DBattle_Hero
   m_TagString: Hero
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1631,15 +1631,15 @@ MonoBehaviour:
   currentState: 0
   baseClass:
     name_: Battle_Hero
-    baseHP: 200
+    baseHP: 500
     baseMP: 150
     baseATK: 15
     baseDEF: 15
-    currentHP: 200
+    currentHP: 500
     currentMP: 150
     currentATK: 15
     currentDEF: 15
-    level: 1
+    level: 2
     attacks: []
     actionPointAttacks:
     - {fileID: 114555624955635680, guid: 8ba1610d198c3fe42a7f2ff9cdbfdf5e, type: 2}
