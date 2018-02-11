@@ -53,6 +53,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackName: Standard Giant Avocado Attack
   attackDescription: Even his Standard Attacks can kill the enemy easily
-  attackDamage: 40
+  attackDamage: 25
   attackCost: 2
   attackType: 0
