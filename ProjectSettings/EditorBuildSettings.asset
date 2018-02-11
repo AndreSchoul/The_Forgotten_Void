@@ -8,9 +8,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/OldScenes/NormalScene.unity
     guid: 90a0f29c55bd7864593546fa328ad352
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 634ffc66bf90698429c7aeb3029614cc
@@ -23,3 +20,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DesertLevel.unity
     guid: e4abdb80846643d4b8e55568d955f81a
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
