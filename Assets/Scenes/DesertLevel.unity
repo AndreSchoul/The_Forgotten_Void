@@ -576,6 +576,16 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cccdb39a9ed79ce4aa0013943759f5aa, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &279655577 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1268008194141220, guid: 1e38eabc3970df44ab4a25c6e3449ae7,
+    type: 2}
+  m_PrefabInternal: {fileID: 708681981}
+--- !u!224 &312664206 stripped
+RectTransform:
+  m_PrefabParentObject: {fileID: 224416419195609546, guid: 1e38eabc3970df44ab4a25c6e3449ae7,
+    type: 2}
+  m_PrefabInternal: {fileID: 708681981}
 --- !u!1 &334861131 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1886397758671328, guid: b08867cca031a8046b390b45e4d7f340,
@@ -1496,6 +1506,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d0471aae4edbbfe47a0448355b72aeb7, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1399845851 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1829948826879252, guid: 1e38eabc3970df44ab4a25c6e3449ae7,
+    type: 2}
+  m_PrefabInternal: {fileID: 708681981}
 --- !u!4 &1432375295 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4309210400557544, guid: d0471aae4edbbfe47a0448355b72aeb7,
@@ -1544,6 +1559,21 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114919635728585754, guid: d43b77ddb742de643965eb3e38ccfdd7,
+        type: 2}
+      propertyPath: attackPanel
+      value: 
+      objectReference: {fileID: 1399845851}
+    - target: {fileID: 114919635728585754, guid: d43b77ddb742de643965eb3e38ccfdd7,
+        type: 2}
+      propertyPath: actionSpacer
+      value: 
+      objectReference: {fileID: 312664206}
+    - target: {fileID: 114919635728585754, guid: d43b77ddb742de643965eb3e38ccfdd7,
+        type: 2}
+      propertyPath: heroStats
+      value: 
+      objectReference: {fileID: 279655577}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d43b77ddb742de643965eb3e38ccfdd7, type: 2}
   m_IsPrefabParent: 0
