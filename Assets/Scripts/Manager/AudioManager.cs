@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour {
 
-    public static AudioClip hitSound, attackSound, jumpSound, deathSound, walkSound;
+    public static AudioClip hitSound, attackSound, jumpSound, deathSound, walkSound, guiSound, robotSound;
     public AudioClip[] hitSounds;
     public AudioClip[] attackSounds;
     public AudioClip[] attackSounds2;
     public AudioClip[] jumpSounds;
     public AudioClip[] deathSounds;
     public AudioClip[] walkSounds;
+    public AudioClip[] guiSounds;
+    public AudioClip[] robotSounds;
 
     public AudioSource walkSource;
 
@@ -34,6 +36,8 @@ public class AudioManager : MonoBehaviour {
         jumpSound = jumpSounds[Random.Range(0, jumpSounds.Length)];
         deathSound = deathSounds[Random.Range(0, deathSounds.Length)];
         walkSound = walkSounds[Random.Range(0, walkSounds.Length)];
+        guiSound = guiSounds[Random.Range(0, guiSounds.Length)];
+        robotSound = robotSounds[Random.Range(0, robotSounds.Length)];
     }
 
     public static void SetVolume(float volume) {
@@ -73,8 +77,12 @@ public class AudioManager : MonoBehaviour {
        //         walkSource.Play();
                 
                 break;
-
-
+            case "gui":
+                audioSource.PlayOneShot(guiSound);
+                break;
+            case "robot":
+                audioSource.PlayOneShot(robotSound);
+                break;
         }
         //walkSource.Pause();
     }

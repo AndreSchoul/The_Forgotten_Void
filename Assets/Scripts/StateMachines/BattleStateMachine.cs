@@ -39,6 +39,7 @@ public class BattleStateMachine : MonoBehaviour {
 
     public GameObject detectedTarget;
 
+
     private static bool fightStartet = true;
 
     private bool setFirstEnemy = true;
@@ -148,8 +149,8 @@ public class BattleStateMachine : MonoBehaviour {
 
                         herosToManage[0].transform.Find("Selector").gameObject.SetActive(true);
                         heroChoice = new HandleTurns();
-          //              if (Input.GetButton("Submit") || fightStartet) {
-                        if(!CharacterStateMaschine.isEnemiesTurn) { 
+                        if (Input.GetButton("Submit") || fightStartet) {
+                    //    if(!CharacterStateMaschine.isEnemiesTurn) { 
                             fightStartet = false;
                             //attackPanel.SetActive(true);
                             if (createAttackPanelOnce) {
@@ -190,7 +191,7 @@ public class BattleStateMachine : MonoBehaviour {
 
 
 
-            SwitchActionButtons();
+       //     SwitchActionButtons();
         }
     }
 
@@ -224,6 +225,9 @@ public class BattleStateMachine : MonoBehaviour {
 
             detectedTarget = UnitSelection.detectedEnemy;
 
+            AudioManager audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+            audioManager.PlaySound("gui");
+           
         }
         //createAttackPanelOnce = true;
     }
@@ -257,7 +261,7 @@ public class BattleStateMachine : MonoBehaviour {
     /// Clears attack panels and corresponding buttons.
     /// </summary>
     private void ClearAttackPanels() {
-        //      UnitSelection.DetectTarget();
+              UnitSelection.DetectTarget();
         UnitSelection.detectedEnemy = null;
         if (UnitSelection.enemySelector != null) {
             UnitSelection.enemySelector.SetActive(false);
@@ -295,8 +299,6 @@ public class BattleStateMachine : MonoBehaviour {
     /// <param name ="spawnpoints">Spawnpoint of each particular character (Spawnpoints attached to camera)</param>
     /// <param name ="isHero"><para>True - character is a hero</para><para>False - character is an enemy</para></param>
     public void SpawnCharacters(int characterCount, List<string> charactersFolderLocation, List<Transform> spawnpoints, bool isHero) {
-
-
         if (characterCount < 1) characterCount = 1;
         if (characterCount > 4) characterCount = 4;
         GameObject newCharacter = null;

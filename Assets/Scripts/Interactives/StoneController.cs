@@ -36,7 +36,6 @@ public class StoneController : MonoBehaviour {
 
     private void OnDestroy()
     {
-        
         Destroy(Instantiate(particle, transform.position, Quaternion.identity), 2);       
     }
 }

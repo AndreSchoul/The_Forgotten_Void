@@ -24,7 +24,7 @@ public class UnitSelection : MonoBehaviour {
     }
 
     private void Update() {
-        SelectEnemy();
+  //      SelectEnemy();
 
         if (Input.GetButton("Submit") && BattleStateMachine.selectEnemy) {
             BattleStateMachine.selectEnemy = false;

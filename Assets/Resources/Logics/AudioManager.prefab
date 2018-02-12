@@ -36,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1391430783059980}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 63.733128, y: 15.124838, z: -0.41899645}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -239,4 +239,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: d05c08d0ae9dd6b43a3f772274def4a5, type: 3}
   walkSounds:
   - {fileID: 8300000, guid: 4a1ce65f34a72ca44b9721af2c262177, type: 3}
+  guiSounds:
+  - {fileID: 8300000, guid: aa63c920042c06847beabd2f6655a2fa, type: 3}
+  robotSounds:
+  - {fileID: 8300000, guid: 7b3301fea8c6757489ca3c20baaa142d, type: 3}
+  - {fileID: 8300000, guid: 409ca0c53fede8a44b17c14f38f4a937, type: 3}
+  - {fileID: 8300000, guid: e0d789da11c853442980e2b4971113ca, type: 3}
   walkSource: {fileID: 82649699379028494}

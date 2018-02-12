@@ -73,7 +73,7 @@ public class CharacterStateMaschine : MonoBehaviour {
             CreateHealthPanel();
             bsm = GameObject.Find("BattleManager").GetComponent<BattleStateMachine>();
 
-            if(this.gameObject.tag == "Hero") CreateHeroPanel();
+       //     if(this.gameObject.tag == "Hero") CreateHeroPanel();
         }
 
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
@@ -243,8 +243,8 @@ public class CharacterStateMaschine : MonoBehaviour {
         enemyToAttack.GetComponent<CharacterStateMaschine>().TakeDmg(calculated_Dmg);
 
 
-
-        audioManager.PlaySound("hit");
+        if(transform.gameObject.name == "Battle_Robot_1") audioManager.PlaySound("robot");
+        else audioManager.PlaySound("hit");
         //enemyToAttack.GetComponent<AudioSource>().PlayOneShot();
     }
 
@@ -302,9 +302,10 @@ public class CharacterStateMaschine : MonoBehaviour {
         AudioSource audio = GetComponent<AudioSource>();
         audio.Play();
         */
-        AudioManager audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
-        audioManager.PlaySound("attack");
-
+       // AudioManager audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        //audioManager.PlaySound("attack");
+        if (transform.gameObject.name == "Battle_Robot_1") audioManager.PlaySound("robot");
+        else audioManager.PlaySound("attack");
 
         // wait for the duration of the attack animation
         yield return new WaitForSeconds(0.15f);
@@ -411,7 +412,7 @@ public class CharacterStateMaschine : MonoBehaviour {
     /// </summary>
     /// <param name = "visibility"><para>True - hero stats are visible</para><para>False - hero stats are hidden</para></param>
     public void ToggleVisibilityHeroStats(bool visibility) {
-        heroStats.SetActive(visibility);
+      //  heroStats.SetActive(visibility);
     }
 
     public IEnumerator RotateCamera(Vector3 byAngles, float inTime) {
