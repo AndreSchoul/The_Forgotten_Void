@@ -218,6 +218,7 @@ GameObject:
   - component: {fileID: 82336868155059904}
   - component: {fileID: 114833203439093460}
   - component: {fileID: 95880053558317222}
+  - component: {fileID: 114714876556235630}
   m_Layer: 0
   m_Name: JnR_SpikeheadDesert
   m_TagString: Enemy
@@ -711,6 +712,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114714876556235630
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1630846026906802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9136d11c78505e45be6e936d2b015d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  isLookingRight: 1
 --- !u!114 &114833203439093460
 MonoBehaviour:
   m_ObjectHideFlags: 1

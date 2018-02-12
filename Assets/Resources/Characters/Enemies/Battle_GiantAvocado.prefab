@@ -983,7 +983,7 @@ Animator:
   m_GameObject: {fileID: 1978514673235510}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: 452c3ea2fedccc343a819843b4cebf5c, type: 2}
+  m_Controller: {fileID: 22100000, guid: 1b8a9be65b8e39a4bb6bb7a8e7acc149, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1005,11 +1005,11 @@ MonoBehaviour:
   currentState: 0
   baseClass:
     name_: Battle_GiantAvocado
-    baseHP: 1000
+    baseHP: 300
     baseMP: 1000
     baseATK: 10
     baseDEF: 10
-    currentHP: 1000
+    currentHP: 300
     currentMP: 1000
     currentATK: 10
     currentDEF: 10

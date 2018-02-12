@@ -146,6 +146,10 @@ public class PlayerController : MonoBehaviour {
             if (other.tag == "Item") {
 
             }
+            if (other.tag == "NextLevel") {
+                GameManager gm = GameObject.Find("Game Manager").GetComponent<GameManager>();
+                gm.LoadNextScene("DesertLevel");
+            }
             // for battle
             if (other.tag == "Enemy") {
                 GameObject.Find("Blende").GetComponent<BlendenController>().blenden();

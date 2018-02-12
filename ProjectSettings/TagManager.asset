@@ -15,6 +15,7 @@ TagManager:
   - SpawnPointEnemy
   - Elevator
   - Button
+  - NextLevel
   layers:
   - Default
   - TransparentFX
