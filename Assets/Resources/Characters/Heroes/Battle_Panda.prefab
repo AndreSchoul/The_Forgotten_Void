@@ -1123,11 +1123,11 @@ MonoBehaviour:
   currentState: 0
   baseClass:
     name_: Battle_Panda
-    baseHP: 100
+    baseHP: 150
     baseMP: 100
     baseATK: 10
     baseDEF: 10
-    currentHP: 100
+    currentHP: 150
     currentMP: 100
     currentATK: 10
     currentDEF: 10
