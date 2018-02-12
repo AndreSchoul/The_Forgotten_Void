@@ -88,7 +88,6 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaDirect: 0.5
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
-    m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -1455,7 +1454,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 18.2775
+  orthographic size: 16.369
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1466,7 +1465,6 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -2080,12 +2078,12 @@ Prefab:
     - target: {fileID: 224371917361434758, guid: f2aa6c4560984234682acb8d6cad7194,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 336
       objectReference: {fileID: 0}
     - target: {fileID: 224371917361434758, guid: f2aa6c4560984234682acb8d6cad7194,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 224371917361434758, guid: f2aa6c4560984234682acb8d6cad7194,
         type: 2}
@@ -2188,7 +2186,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1437875872
 Transform:
   m_ObjectHideFlags: 0
